@@ -237,3 +237,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// Upsell Modal Functions
+function openUpsellModal() {
+    const modal = document.getElementById('upsell-modal');
+    const backdrop = document.getElementById('modal-backdrop');
+    const panel = document.getElementById('modal-panel');
+
+    if (modal && backdrop && panel) {
+        // Show modal
+        modal.classList.remove('hidden');
+
+        // Animate backdrop
+        setTimeout(() => {
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+        }, 10);
+
+        // Animate panel
+        setTimeout(() => {
+            panel.classList.remove('opacity-0', 'translate-y-4', 'sm:scale-95');
+            panel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+        }, 10);
+
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeUpsellModal() {
+    const modal = document.getElementById('upsell-modal');
+    const backdrop = document.getElementById('modal-backdrop');
+    const panel = document.getElementById('modal-panel');
+
+    if (modal && backdrop && panel) {
+        // Animate out
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0');
+
+        panel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
+        panel.classList.add('opacity-0', 'translate-y-4', 'sm:scale-95');
+
+        // Hide modal after animation
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 300);
+    }
+}
+
+function acceptUpsell() {
+    // Redirect to Premium checkout with UTM parameters
+    window.location.href = 'https://www.ggcheckout.com/checkout/v3/0MKOpiqHMGFlRrNdO1Zy' + window.location.search;
+}
+
+function declineUpsell() {
+    // Close modal and redirect to Basic plan checkout
+    closeUpsellModal();
+
+    // Redirect to Basic plan checkout
+    setTimeout(() => {
+        window.location.href = 'https://www.ggcheckout.com/checkout/v3/lW66HItuyu3qG3eN1sDM' + window.location.search;
+    }, 300);
+}
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('upsell-modal');
+    const backdrop = document.getElementById('modal-backdrop');
+
+    if (modal && backdrop) {
+        backdrop.addEventListener('click', closeUpsellModal);
+    }
+});
