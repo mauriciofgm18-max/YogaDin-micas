@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Update Header Date
+    const dateElement = document.getElementById('header-date');
+    if (dateElement) {
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('pt-BR');
+        dateElement.textContent = formattedDate;
+    }
+
     // Scroll Animations (Intersection Observer)
     const observerOptions = {
         threshold: 0.1,
