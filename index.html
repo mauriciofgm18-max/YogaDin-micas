@@ -1,51 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 Dinâmicas de Yoga - Transforme Suas Aulas</title>
+    <title>FormaArt PaperCraft - Crie Mundos de Papel em 3D</title>
     <meta name="description"
-        content="Descubra 100 dinâmicas criativas para enriquecer suas aulas de Yoga. Material completo para instrutores.">
-    <script src="https://cdn.tailwindcss.com"></script>
+        content="Modelos digitais prontos para montar, recortar e dar vida. Transforme papel em arte 3D incrível.">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Outfit:wght@300;400;600;800&family=Patrick+Hand&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <link rel="stylesheet" href="style.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            DEFAULT: '#6366f1', // Indigo 500
-                            light: '#818cf8', // Indigo 400
-                            dark: '#4f46e5', // Indigo 600
-                            accent: '#34d399', // Emerald 400
-                            accentDark: '#10b981', // Emerald 500
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="upsell-modal.css">
 
     <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
         data-utmify-prevent-subids async defer></script>
@@ -58,527 +32,555 @@
         a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
         document.head.appendChild(a);
     </script>
+
 </head>
 
-<body
-    class="bg-slate-50 text-slate-800 font-sans overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
+<body>
 
-    <!-- Background Elements -->
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div
-            class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-light rounded-full blur-[100px] opacity-60 animate-pulse-slow">
-        </div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-green-100 rounded-full blur-[100px] opacity-60 animate-pulse-slow"
-            style="animation-delay: 2s;"></div>
+    <!-- Top Alert Banner -->
+    <div class="promo-banner" id="promoBanner">
+        <p>🚨 Oportunidade Única: Promoção válida somente até hoje, <span id="currentDate"></span></p>
     </div>
 
-    <!-- Purchase Notifications (Social Proof) -->
-    <div id="notification-container" class="fixed bottom-6 left-6 z-50 space-y-3 pointer-events-none">
-        <!-- Notifications will be inserted here by JavaScript -->
-    </div>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
 
-    <!-- Header -->
-    <!-- Discount Banner -->
-    <div
-        class="bg-red-600 text-white text-center py-3 font-bold uppercase tracking-wider text-sm md:text-base sticky top-0 z-50 shadow-md">
-        Desconto somente hoje – <span id="header-date"></span>
+    <!-- Animated Background Elements -->
+    <div class="bg-decoration">
+        <div class="floating-item item-1"><i data-lucide="scissors"></i></div>
+        <div class="floating-item item-2"><i data-lucide="pencil"></i></div>
+        <div class="floating-item item-3"><i data-lucide="ruler"></i></div>
+        <div class="floating-item item-4"><i data-lucide="pentagon"></i></div>
+        <div class="floating-item item-5"><i data-lucide="compass"></i></div>
     </div>
 
     <!-- Hero Section -->
-    <section class="relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+    <header class="hero-section">
+        <div class="paper-texture-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge-craft">+2000 ARQUIVOS APROVADOS</span>
+            <h1 class="animate-up">TRANSFORME PAPEL EM <span class="highlight-orange marker-underline">MUNDOS 3D
+                    INCRÍVEIS</span></h1>
+            <p class="subheadline animate-up delay-1">Modelos digitais prontos para montar, recortar e dar vida — mesmo
+                sem experiência.</p>
 
-                <!-- Text Content (Left Column) -->
-                <div class="flex-1 text-center lg:text-left z-10">
-
-                    <h1
-                        class="font-heading text-4xl lg:text-6xl font-bold leading-tight mb-6 text-slate-900 fade-in-up delay-100">
-                        100 Dinâmicas para Criar Aulas de Yoga <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-400">Mais
-                            Vivas, Criativas, Profundas</span> e <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accentDark to-green-400">Inesquecíveis</span>
-                        <span class="text-blue-600">+
-                            Bônus</span>
-                    </h1>
-                    <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 fade-in-up delay-200">
-                        Acesse dinâmicas modernas e transformadoras — relaxantes e energizantes — para elevar o
-                        bem-estar, a conexão e o equilíbrio dos seus alunos e clientes.
-                    </p>
+            <div class="vsl-container animate-up delay-2">
+                <div class="tape-top"></div>
+                <!-- PandaVideo Player -->
+                <div class="video-wrapper">
+                    <div style="position:relative;padding-top:177.77777777777777%;">
+                        <iframe id="panda-69dac6a8-93ae-41ef-8ea7-9f33b9405bfc"
+                            src="https://player-vz-14fceb23-c8a.tv.pandavideo.com.br/embed/?v=69dac6a8-93ae-41ef-8ea7-9f33b9405bfc"
+                            style="border:none;position:absolute;top:0;left:0;"
+                            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                            allowfullscreen=true width="100%" height="100%" fetchpriority="high">
+                        </iframe>
+                    </div>
                 </div>
+                <div class="tape-bottom"></div>
+            </div>
 
-                <!-- VSL Player & Button (Right Column) -->
-                <div class="flex-1 w-full max-w-sm lg:max-w-md relative z-10 fade-in-up delay-400">
-                    <!-- Video Container with Frame (9:16 Vertical) -->
-                    <div class="relative w-full aspect-[9/16] rounded-3xl">
-                        <!-- Glow Effect -->
-                        <div
-                            class="absolute -inset-1 bg-gradient-to-tr from-brand-accent to-brand-DEFAULT rounded-[2rem] blur-lg opacity-70">
+            <a href="#pricing" class="cta-button pulse-animation animate-up delay-3">
+                QUERO COMEÇAR AGORA
+                <i data-lucide="scissors"></i>
+            </a>
+
+            <div class="social-proof animate-up delay-3">
+                <div class="avatars">
+                    <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=32')"></div>
+                    <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=5')"></div>
+                    <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=12')"></div>
+                    <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=24')"></div>
+                </div>
+                <div class="live-activity">
+                    <span class="pulse-dot"></span>
+                    <span class="live-text"><strong id="live-counter">5.842</strong> criadores ativos agora</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Why Start Today -->
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon"><i data-lucide="scissors"></i></div>
+        <div class="separator-line"></div>
+    </div>
+    <section class="section why-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que começar <span class="highlight-blue">hoje?</span></h2>
+                <div class="underline-sketch"></div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card paper-card tilt-left">
+                    <div class="tape-corner"></div>
+                    <div class="card-icon"><i data-lucide="brain-circuit"></i></div>
+                    <h3>Terapia Criativa</h3>
+                    <p>Desconecte-se das telas e foque no momento presente. Um hobby relaxante para sua mente.</p>
+                </div>
+                <div class="card paper-card tilt-right">
+                    <div class="tape-corner"></div>
+                    <div class="card-icon"><i data-lucide="gift"></i></div>
+                    <h3>Decoração Única</h3>
+                    <p>Crie peças exclusivas para decorar seu quarto, sala ou home office com estilo.</p>
+                </div>
+                <div class="card paper-card tilt-left">
+                    <div class="tape-corner"></div>
+                    <div class="card-icon"><i data-lucide="users"></i></div>
+                    <h3>Tempo em Família</h3>
+                    <p>Uma atividade perfeita para fazer com filhos, sobrinhos ou amigos. Diversão garantida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Can Create -->
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon"><i data-lucide="scissors"></i></div>
+        <div class="separator-line"></div>
+    </div>
+    <section class="section creation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que você pode <span class="highlight-orange">criar</span></h2>
+                <p>Tudo começa com uma folha de papel e termina em algo incrível.</p>
+            </div>
+
+            <!-- Marquee Carousel -->
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <!-- Set 1 -->
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-animals.jpg" alt="Animais" class="polaroid-img">
+                            <div class="caption">🦁 Animais</div>
                         </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-characters.jpg" alt="Personagens" class="polaroid-img">
+                            <div class="caption">🎎 Personagens</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-decoration.jpg" alt="Decoração" class="polaroid-img">
+                            <div class="caption">🏺 Decoração</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-cars.jpg" alt="Veículos" class="polaroid-img">
+                            <div class="caption">🏎️ Veículos</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-castles.jpg" alt="Mundos Fantásticos" class="polaroid-img">
+                            <div class="caption">🏰 Castelos</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-heroes.png" alt="Super-Heróis" class="polaroid-img">
+                            <div class="caption">🦸 Super-Heróis</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-santa.png" alt="Natal" class="polaroid-img">
+                            <div class="caption">🎅 Natal</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-mario.jpg" alt="Games" class="polaroid-img">
+                            <div class="caption">🎮 Games</div>
+                        </div>
+                    </div>
 
-                        <!-- Frame & Video Wrapper -->
-                        <div
-                            class="relative w-full h-full bg-slate-900 rounded-[1.8rem] overflow-hidden border-4 border-white shadow-2xl z-10">
+                    <!-- Set 2 (Duplicate for Loop) -->
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-animals.jpg" alt="Animais" class="polaroid-img">
+                            <div class="caption">🦁 Animais</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-characters.jpg" alt="Personagens" class="polaroid-img">
+                            <div class="caption">🎎 Personagens</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-decoration.jpg" alt="Decoração" class="polaroid-img">
+                            <div class="caption">🏺 Decoração</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-cars.jpg" alt="Veículos" class="polaroid-img">
+                            <div class="caption">🏎️ Veículos</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-castles.jpg" alt="Mundos Fantásticos" class="polaroid-img">
+                            <div class="caption">🏰 Castelos</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-heroes.png" alt="Super-Heróis" class="polaroid-img">
+                            <div class="caption">🦸 Super-Heróis</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-santa.png" alt="Natal" class="polaroid-img">
+                            <div class="caption">🎅 Natal</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="polaroid">
+                            <img src="img/gallery-mario.jpg" alt="Games" class="polaroid-img">
+                            <div class="caption">🎮 Games</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                            <!-- Cropped Video Player -->
-                            <!-- Width 316% simulates zooming into the center of a 16:9 video to fill a 9:16 container -->
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[316%]">
-                                <script src="https://fast.wistia.com/player.js" async></script>
-                                <script src="https://fast.wistia.com/embed/8tvhz7vxn1.js" async type="module"></script>
-                                <style>
-                                    wistia-player[media-id='8tvhz7vxn1']:not(:defined) {
-                                        background: center / cover no-repeat url('https://fast.wistia.com/embed/medias/8tvhz7vxn1/swatch');
-                                        display: block;
-                                        filter: blur(5px);
-                                        height: 100%;
-                                    }
-                                </style>
-                                <wistia-player media-id="8tvhz7vxn1" aspect="1.7777777777777777"
-                                    style="height:100%; width:100%;"></wistia-player>
+    <!-- How it Works -->
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon"><i data-lucide="scissors"></i></div>
+        <div class="separator-line"></div>
+    </div>
+    <section class="section steps-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Do arquivo ao <span class="highlight-blue">3D</span></h2>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Baixe os moldes</h3>
+                            <p>Acesso imediato após a compra. Arquivos PDF de alta qualidade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-connector-visual"><i data-lucide="chevron-right"></i></div>
+                <div class="step-item">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Imprima em casa</h3>
+                            <p>Compatível com qualquer impressora comum e papéis variados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-connector-visual"><i data-lucide="chevron-right"></i></div>
+                <div class="step-item">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Recorte e monte</h3>
+                            <p>Guias visuais simples e intuitivos. É só seguir os números!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Results -->
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon"><i data-lucide="scissors"></i></div>
+        <div class="separator-line"></div>
+    </div>
+    <section class="section testimonials-section">
+        <div class="paper-rip-top"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Resultados da <span class="highlight-orange">Comunidade</span></h2>
+                <p>Resultados reais de quem já criou com FormaArt</p>
+            </div>
+
+            <div class="testimonials-carousel">
+                <div class="testimonials-track">
+                    <!-- Set 1 -->
+                    <div class="polaroid-wrapper">
+                        <div class="polaroid tilt-right">
+                            <img src="img/pikachu.png" alt="Pikachu Papercraft" class="polaroid-img">
+                            <div class="handwritten-note">
+                                "Nunca imaginei que conseguiria!" <br>
+                                <div class="client-info">
+                                    <img src="https://i.pravatar.cc/100?img=5" alt="Ana Clara" class="client-avatar">
+                                    <span>— Ana Clara</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="polaroid-wrapper">
+                        <div class="polaroid tilt-left">
+                            <img src="img/penguin.png" alt="Pinguim Papercraft" class="polaroid-img">
+                            <div class="handwritten-note">
+                                "Meu filho adorou montar." <br>
+                                <div class="client-info">
+                                    <img src="https://i.pravatar.cc/100?img=11" alt="Marcos Silva"
+                                        class="client-avatar">
+                                    <span>— Marcos Silva</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="polaroid-wrapper">
+                        <div class="polaroid tilt-right-small">
+                            <img src="img/bear.png" alt="Urso Papercraft" class="polaroid-img">
+                            <div class="handwritten-note">
+                                "Terapia pura para o fim de semana." <br>
+                                <div class="client-info">
+                                    <img src="https://i.pravatar.cc/100?img=9" alt="Juliana Costa"
+                                        class="client-avatar">
+                                    <span>— Juliana Costa</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CTA Button (Moved below VSL) -->
-                    <div class="w-full mt-8 fade-in-up delay-500 relative z-20">
-                        <a href="#planos"
-                            class="block w-full bg-green-600 hover:bg-green-700 text-white text-xl text-center py-5 rounded-full font-bold transition-all shadow-xl shadow-green-600/30 hover:shadow-green-600/50 transform hover:-translate-y-1 animate-pulse-slow">
-                            Quero Acessar Agora <i class="fa-solid fa-arrow-right ml-2"></i>
-                        </a>
+                    <!-- Set 2 (Duplicate for Loop) -->
+                    <div class="polaroid-wrapper">
+                        <div class="polaroid tilt-right">
+                            <img src="img/pikachu.png" alt="Pikachu Papercraft" class="polaroid-img">
+                            <div class="handwritten-note">
+                                "Nunca imaginei que conseguiria!" <br>
+                                <div class="client-info">
+                                    <img src="https://i.pravatar.cc/100?img=5" alt="Ana Clara" class="client-avatar">
+                                    <span>— Ana Clara</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="polaroid-wrapper">
+                        <div class="polaroid tilt-left">
+                            <img src="img/penguin.png" alt="Pinguim Papercraft" class="polaroid-img">
+                            <div class="handwritten-note">
+                                "Meu filho adorou montar." <br>
+                                <div class="client-info">
+                                    <img src="https://i.pravatar.cc/100?img=11" alt="Marcos Silva"
+                                        class="client-avatar">
+                                    <span>— Marcos Silva</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="polaroid-wrapper">
+                        <div class="polaroid tilt-right-small">
+                            <img src="img/bear.png" alt="Urso Papercraft" class="polaroid-img">
+                            <div class="handwritten-note">
+                                "Terapia pura para o fim de semana." <br>
+                                <div class="client-info">
+                                    <img src="https://i.pravatar.cc/100?img=9" alt="Juliana Costa"
+                                        class="client-avatar">
+                                    <span>— Juliana Costa</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
+        <div class="paper-rip-bottom"></div>
     </section>
 
-    <!-- What You Receive -->
-    <section class="py-20 bg-white relative">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 scroll-trigger">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-slate-900 mb-4">O Que Você Vai Receber</h2>
-                <div class="w-20 h-1.5 bg-brand-accent mx-auto rounded-full"></div>
+    <!-- Bonus Section -->
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon"><i data-lucide="scissors"></i></div>
+        <div class="separator-line"></div>
+    </div>
+    <section class="section bonus-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bônus Exclusivos — <span class="highlight-red">Liberados Hoje</span></h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-DEFAULT scroll-trigger">
-                    <i class="fa-solid fa-book-open text-3xl text-brand-DEFAULT mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">100 Dinâmicas (PDF)</h3>
-                    <p class="text-sm text-slate-600">Material rico e detalhado com passo a passo para aplicar em suas
-                        aulas imediatamente.</p>
-                </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-accent scroll-trigger delay-100">
-                    <i class="fa-solid fa-compass text-3xl text-brand-accentDark mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Organização Inteligente</h3>
-                    <p class="text-sm text-slate-600">Encontre facilmente o que precisa: organizado por nível de
-                        dificuldade, objetivo e duração.</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-DEFAULT scroll-trigger delay-200">
-                    <i class="fa-solid fa-mobile-screen text-3xl text-brand-DEFAULT mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Acesso Imediato</h3>
-                    <p class="text-sm text-slate-600">Receba o acesso no seu e-mail agora mesmo e comece a transformar
-                        suas aulas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section id="beneficios" class="py-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-brand-light/30 -z-10"></div>
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 scroll-trigger">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Por Que Escolher Este
-                    Material?</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">Eleve o nível das suas aulas e fidelize seus alunos com
-                    experiências únicas.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-DEFAULT scroll-trigger">
-                    <i class="fa-solid fa-users text-3xl text-brand-DEFAULT mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Para Todos os Níveis</h3>
-                    <p class="text-sm text-slate-600">Adaptações para iniciantes, intermediários e avançados.</p>
-                </div>
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-accent scroll-trigger delay-100">
-                    <i class="fa-solid fa-heart text-3xl text-brand-accentDark mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Bem-estar Integral</h3>
-                    <p class="text-sm text-slate-600">Foco no corpo, mente e espírito dos seus alunos.</p>
-                </div>
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-DEFAULT scroll-trigger delay-200">
-                    <i class="fa-solid fa-rotate text-3xl text-brand-DEFAULT mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Atualizações Mensais</h3>
-                    <p class="text-sm text-slate-600">Conteúdo novo todo mês no plano Premium.</p>
-                </div>
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-accent scroll-trigger delay-300">
-                    <i class="fa-solid fa-calendar-check text-3xl text-brand-accentDark mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Consistência</h3>
-                    <p class="text-sm text-slate-600">Nunca mais fique sem ideias para suas aulas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bonus -->
-    <section id="bonus" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <!-- Decorative blobs -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-DEFAULT/20 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/20 rounded-full blur-[100px]"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 scroll-trigger">
-                <span class="text-brand-accent font-bold tracking-wider uppercase text-sm">Exclusivo</span>
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold mt-2 mb-2">Bônus Exclusivos - Valor R$147 <span
-                        class="text-brand-accent">(Hoje Grátis!)</span></h2>
-                <div class="w-32 h-1 bg-gradient-to-r from-purple-500 to-brand-accent mx-auto rounded-full mt-4"></div>
-                <p class="text-slate-300 mt-4">Disponível apenas no plano Premium</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group scroll-trigger">
-
-                    <img src="images/certificado.jpg" alt="Certificado de Yoga"
-                        class="w-full h-48 object-cover rounded-2xl mb-6 group-hover:scale-105 transition-transform duration-300">
-                    <h3 class="font-heading text-xl font-bold mb-2">Certificado de Yoga</h3>
-                    <p class="text-2xl font-bold text-red-400 mb-3 line-through">R$47</p>
-                    <p class="text-slate-400 text-sm">Certificado de conclusão de horas complementares para enriquecer
-                        seu currículo.</p>
-                </div>
-
-                <div
-                    class="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group scroll-trigger delay-100">
-
-                    <img src="images/meditacao.jpg" alt="Meditações Guiadas"
-                        class="w-full h-48 object-contain rounded-2xl mb-6 group-hover:scale-105 transition-transform duration-300">
-                    <h3 class="font-heading text-xl font-bold mb-2">Guia de Meditação Guiada</h3>
-                    <p class="text-2xl font-bold text-red-400 mb-3 line-through">R$47</p>
-                    <p class="text-slate-400 text-sm">Coleção completa de meditações guiadas para complementar suas
-                        aulas.</p>
-                </div>
-
-                <div
-                    class="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group scroll-trigger delay-200">
-
-                    <img src="images/pranayamas.jpg" alt="Técnicas de Respiração"
-                        class="w-full h-48 object-contain rounded-2xl mb-6 group-hover:scale-105 transition-transform duration-300">
-                    <h3 class="font-heading text-xl font-bold mb-2">Pranayamas e Técnicas de Respiração</h3>
-                    <p class="text-2xl font-bold text-red-400 mb-3 line-through">R$53</p>
-                    <p class="text-slate-400 text-sm">Técnicas de respiração para relaxamento e energização dos
-                        praticantes.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Total Value Banner -->
-            <div class="mt-12 text-center scroll-trigger">
-                <div
-                    class="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-2xl shadow-2xl shadow-green-500/40">
-                    <p class="text-sm font-semibold mb-1">Total em Bônus: <span
-                            class="line-through opacity-75">R$147</span></p>
-                    <p class="text-2xl font-bold">GRÁTIS HOJE!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="planos" class="py-24 bg-slate-50 relative">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 scroll-trigger">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Escolha Seu Plano</h2>
-                <p class="text-slate-600">Comece hoje mesmo a transformar suas aulas.</p>
-            </div>
-
-            <div class="flex flex-col lg:flex-row justify-center items-center gap-8 max-w-5xl mx-auto">
-
-                <!-- Basic Plan -->
-                <div
-                    class="w-full lg:w-1/3 bg-white p-8 rounded-3xl border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 scroll-trigger">
-                    <h3 class="font-heading text-2xl font-bold text-slate-800 mb-2">Básico</h3>
-                    <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-sm text-slate-500">R$</span>
-                        <span class="text-4xl font-bold text-slate-900">10</span>
-                        <span class="text-sm text-slate-500">/único</span>
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="stamp-free">GRÁTIS</div>
+                    <img src="img/bonus-atividades.jpg" alt="Atividades Psicomotoras" class="bonus-img">
+                    <h3>100 Atividades Psicomotoras</h3>
+                    <div class="bonus-price">
+                        <span class="old-price">R$ 47,90</span>
+                        <span class="free-text">GRÁTIS HOJE</span>
                     </div>
+                    <p>Exercícios divertidos para desenvolver coordenação motora fina.</p>
+                </div>
+                <div class="bonus-card">
+                    <img src="img/bonus-quebra-cabeca.jpg" alt="Quebra-Cabeça 3D" class="bonus-img">
+                    <h3>100 Moldes de Quebra-Cabeça</h3>
+                    <div class="bonus-price">
+                        <span class="old-price">R$ 39,90</span>
+                        <span class="free-text">GRÁTIS HOJE</span>
+                    </div>
+                    <p>Desafios mentais em 3D para todas as idades.</p>
+                </div>
+                <div class="bonus-card">
+                    <img src="img/bonus-bobbie.jpg" alt="Bobbie Goods" class="bonus-img">
+                    <h3>100 Bobbie Goods para Colorir</h3>
+                    <div class="bonus-price">
+                        <span class="old-price">R$ 29,90</span>
+                        <span class="free-text">GRÁTIS HOJE</span>
+                    </div>
+                    <p>Os personagens mais fofos do momento prontos para sua arte.</p>
+                </div>
+                <div class="bonus-card">
+                    <img src="img/bonus-updates.jpg" alt="Atualizações Mensais" class="bonus-img">
+                    <h3>Atualizações Mensais por 12 Meses</h3>
+                    <div class="bonus-price">
+                        <span class="old-price">R$ 97,00</span>
+                        <span class="free-text">GRÁTIS HOJE</span>
+                    </div>
+                    <p>Receba novos modelos e coleções todos os meses sem custo extra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3 text-sm text-slate-600">
-                            <i class="fa-solid fa-check text-green-500"></i> 100 Dinâmicas de Yoga
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-600">
-                            <i class="fa-solid fa-check text-green-500"></i> Organização por nível
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-600">
-                            <i class="fa-solid fa-check text-green-500"></i> Acesso digital
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-400">
-                            <i class="fa-solid fa-xmark text-red-300"></i> Sem bônus
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-400">
-                            <i class="fa-solid fa-xmark text-red-300"></i> Sem vídeos
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-400">
-                            <i class="fa-solid fa-xmark text-red-300"></i> Sem atualizações
-                        </li>
+    <!-- Pricing Section -->
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon"><i data-lucide="scissors"></i></div>
+        <div class="separator-line"></div>
+    </div>
+    <section id="pricing" class="section pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Escolha seu Kit <span class="highlight-blue">PaperCraft</span></h2>
+            </div>
+
+            <div class="pricing-container">
+                <!-- Beginner Kit -->
+                <div class="plan-card basic">
+                    <div class="pin-tack"></div>
+                    <h3>Kit Iniciante</h3>
+                    <div class="price">R$ 14,90</div>
+                    <ul class="features-list">
+                        <li><i data-lucide="check"></i> Acesso a +1000 moldes</li>
+                        <li><i data-lucide="check"></i> Personagens Básicos</li>
+                        <li><i data-lucide="check"></i> Objetos de Decoração</li>
+                        <li><i data-lucide="check"></i> Frutas, Caixas, Games</li>
+                    </ul>
+                    <a href="#" class="btn-basic" onclick="openUpsellPopup(event)">QUERO O INICIANTE</a>
+                </div>
+
+                <!-- Master Kit -->
+                <div class="plan-card master">
+                    <div class="tape-strip"></div>
+                    <div class="badge-best">MAIS VENDIDO</div>
+                    <h3>Kit Mestre</h3>
+                    <div class="old-price">R$ 49,90</div>
+                    <div class="price">R$ 24,90</div>
+                    <p class="installments">ou 3x de R$ 8,30</p>
+
+                    <p class="plan-description">O acervo definitivo. Tudo que você precisa para criar projetos
+                        impressionantes sem limites.</p>
+
+                    <ul class="features-list">
+                        <li><i data-lucide="check-circle"></i> <strong>Acesso Completo a +2000 Moldes</strong></li>
+
+                        <!-- Categories Grid -->
+                        <div class="categories-grid">
+                            <li><i data-lucide="type"></i> Alfabeto Lowpoly</li>
+                            <li><i data-lucide="castle"></i> Castelos</li>
+                            <li><i data-lucide="sparkles"></i> Coisas Fofas</li>
+                            <li><i data-lucide="footprints"></i> Dinossauros</li>
+                            <li><i data-lucide="flame"></i> Dragões</li>
+                            <li><i data-lucide="rocket"></i> Espaço - Universo</li>
+                            <li><i data-lucide="trophy"></i> Esportes</li>
+                            <li><i data-lucide="glasses"></i> Geek</li>
+                            <li><i data-lucide="landmark"></i> Mitologia</li>
+                            <li><i data-lucide="music"></i> Músicos</li>
+                        </div>
+
+                        <li><i data-lucide="infinity"></i> Acesso Vitalício (Sem mensalidades)</li>
+
+                        <li><i data-lucide="users"></i> Área de Membros Premium</li>
+                        <li><i data-lucide="headset"></i> Suporte Prioritário</li>
+                        <li><i data-lucide="images"></i> Galeria da Comunidade</li>
+
+                        <div class="bonus-separator">
+                            <span>+ 4 BÔNUS EXCLUSIVOS</span>
+                        </div>
+
+                        <li class="bonus-item"><i data-lucide="gift"></i> <strong>Bônus 1:</strong> 100 Atividades
+                            Psicomotoras</li>
+                        <li class="bonus-item"><i data-lucide="gift"></i> <strong>Bônus 2:</strong> 100 Moldes de
+                            Quebra-Cabeça</li>
+                        <li class="bonus-item"><i data-lucide="gift"></i> <strong>Bônus 3:</strong> 100 Bobbie Goods
+                            Colorir</li>
+                        <li class="bonus-item"><i data-lucide="gift"></i> <strong>Bônus 4:</strong> Atualizações por 12
+                            Meses</li>
                     </ul>
 
-                    <a href="javascript:void(0)" onclick="openUpsellModal()"
-                        class="block w-full py-3 px-6 text-center rounded-xl border-2 border-slate-200 text-slate-600 font-bold hover:border-slate-300 hover:text-slate-800 transition-colors">
-                        QUERO COMPRAR
+                    <a href="https://www.ggcheckout.com/checkout/v3/55sJ7lBAGh0Yuq9rWX3l"
+                        class="cta-button pulse-animation">
+                        QUERO ESTE KIT
+                        <i data-lucide="arrow-right"></i>
                     </a>
                 </div>
-
-                <!-- Premium Plan -->
-                <div
-                    class="w-full lg:w-1/3 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 p-1 rounded-3xl shadow-2xl relative transform lg:-translate-y-6 scroll-trigger delay-100 hover:scale-105 transition-all duration-300">
-                    <!-- Glow effect -->
-                    <div
-                        class="absolute -inset-2 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 rounded-3xl blur-lg opacity-60 animate-pulse-slow transition duration-300">
-                    </div>
-
-                    <!-- Inner card -->
-                    <div class="relative bg-white rounded-[22px] p-8">
-                        <div
-                            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg whitespace-nowrap">
-                            ⭐ MAIS VENDIDO
-                        </div>
-
-                        <h3 class="font-heading text-3xl font-bold text-purple-600 mb-2 mt-2">
-                            Premium</h3>
-                        <div class="flex items-baseline gap-1 mb-6">
-                            <span class="text-sm text-slate-500">R$</span>
-                            <span class="text-6xl font-bold text-brand-DEFAULT">27</span>
-                            <span class="text-sm text-slate-500">/único</span>
-                        </div>
-
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-center gap-3 text-sm font-semibold text-slate-800">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center shadow-md">
-                                    <i class="fa-solid fa-check text-white text-xs"></i>
-                                </div>
-                                250 Dinâmicas de Yoga (PDF)
-                            </li>
-                            <li class="flex items-center gap-3 text-sm font-semibold text-slate-800">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center shadow-md">
-                                    <i class="fa-solid fa-check text-white text-xs"></i>
-                                </div>
-                                Curso em Vídeo
-                            </li>
-                            <li class="flex items-center gap-3 text-sm font-semibold text-slate-800">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center shadow-md">
-                                    <i class="fa-solid fa-check text-white text-xs"></i>
-                                </div>
-                                Atualizações Mensais
-                            </li>
-                            <li class="flex items-center gap-3 text-sm font-semibold text-slate-800">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center shadow-md">
-                                    <i class="fa-solid fa-check text-white text-xs"></i>
-                                </div>
-                                Suporte Prioritário
-                            </li>
-
-                            <div class="my-4 pt-4 border-t-2 border-dashed border-purple-200">
-                                <p
-                                    class="text-xs font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent uppercase tracking-wider mb-3 flex items-center gap-2">
-                                    <i class="fa-solid fa-sparkles"></i> Bônus Inclusos:
-                                </p>
-                                <li class="flex items-center gap-3 text-sm text-slate-700 mb-2">
-                                    <i class="fa-solid fa-gift text-purple-500 text-lg"></i> Certificado
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-slate-700 mb-2">
-                                    <i class="fa-solid fa-gift text-purple-500 text-lg"></i> Meditações
-                                    Guiadas
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-slate-700 mb-2">
-                                    <i class="fa-solid fa-gift text-purple-500 text-lg"></i> Técnicas de
-                                    Respiração
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-slate-700">
-                                    <i class="fa-solid fa-gift text-purple-500 text-lg"></i> Aulas
-                                    extras de Marina
-                                </li>
-                            </div>
-                        </ul>
-
-                        <a href="javascript:void(0)"
-                            onclick="window.location.href = 'https://www.ggcheckout.com/checkout/v3/qpn3dX2ymxwOL7NuGP6G' + window.location.search;"
-                            class="block w-full py-4 px-6 text-center rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold shadow-xl shadow-purple-500/40 hover:shadow-purple-500/60 hover:scale-[1.02] transition-all">
-                            QUERO COMPRAR
-
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="depoimentos" class="py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 scroll-trigger">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-slate-900 mb-4">O Que Dizem
-                    Nossas Alunas
-                </h2>
             </div>
 
-            <!-- Carousel Wrapper -->
-            <div class="relative max-w-4xl mx-auto">
-                <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar"
-                    id="testimonial-slider">
-
-                    <!-- Testimonial 1 -->
-                    <div
-                        class="snap-center shrink-0 w-full md:w-[80%] bg-slate-50 p-8 rounded-3xl border border-slate-100 scroll-trigger">
-                        <div class="flex text-yellow-400 mb-4">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-lg text-slate-700 italic mb-6">"Minhas aulas mudaram
-                            completamente! As alunas
-                            adoram as novidades e eu me sinto muito mais segura para planejar."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=faces"
-                                alt="Júlia Costa"
-                                class="w-12 h-12 rounded-full object-cover border-2 border-brand-light">
-                            <div>
-                                <h4 class="font-bold text-slate-900">Júlia Costa</h4>
-                                <p class="text-sm text-slate-500">Instrutora há 2 anos</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div
-                        class="snap-center shrink-0 w-full md:w-[80%] bg-slate-50 p-8 rounded-3xl border border-slate-100 scroll-trigger">
-                        <div class="flex text-yellow-400 mb-4">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-lg text-slate-700 italic mb-6">"O material é incrível, super
-                            organizado e fácil
-                            de aplicar. O plano Premium vale cada centavo pelos bônus!"</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=faces"
-                                alt="Ana Maria" class="w-12 h-12 rounded-full object-cover border-2 border-green-200">
-                            <div>
-                                <h4 class="font-bold text-slate-900">Ana Maria</h4>
-                                <p class="text-sm text-slate-500">Instrutora de Hatha Yoga</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div
-                        class="snap-center shrink-0 w-full md:w-[80%] bg-slate-50 p-8 rounded-3xl border border-slate-100 scroll-trigger">
-                        <div class="flex text-yellow-400 mb-4">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-lg text-slate-700 italic mb-6">"A Marina é maravilhosa e esse
-                            material reflete
-                            todo o conhecimento dela. Recomendo de olhos fechados."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces"
-                                alt="Carla Silva"
-                                class="w-12 h-12 rounded-full object-cover border-2 border-purple-200">
-                            <div>
-                                <h4 class="font-bold text-slate-900">Carla Silva</h4>
-                                <p class="text-sm text-slate-500">Praticante e Instrutora</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div
-                        class="snap-center shrink-0 w-full md:w-[80%] bg-slate-50 p-8 rounded-3xl border border-slate-100 scroll-trigger">
-                        <div class="flex text-yellow-400 mb-4">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-lg text-slate-700 italic mb-6">"Finalmente encontrei um material
-                            que realmente
-                            funciona! Meus alunos estão mais engajados e eu economizo horas de
-                            planejamento."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces"
-                                alt="Beatriz Almeida"
-                                class="w-12 h-12 rounded-full object-cover border-2 border-blue-200">
-                            <div>
-                                <h4 class="font-bold text-slate-900">Beatriz Almeida</h4>
-                                <p class="text-sm text-slate-500">Instrutora de Vinyasa Yoga</p>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="trust-strip">
+                <div class="trust-item">
+                    <i data-lucide="lock"></i>
+                    <span>COMPRA 100% SEGURA</span>
                 </div>
-
-                <!-- Navigation Dots -->
-                <div class="flex justify-center gap-2 mt-4">
-                    <button class="w-3 h-3 rounded-full bg-brand-DEFAULT" aria-label="Slide 1"></button>
-                    <button class="w-3 h-3 rounded-full bg-slate-300 hover:bg-brand-DEFAULT/50 transition-colors"
-                        aria-label="Slide 2"></button>
-                    <button class="w-3 h-3 rounded-full bg-slate-300 hover:bg-brand-DEFAULT/50 transition-colors"
-                        aria-label="Slide 3"></button>
-                    <button class="w-3 h-3 rounded-full bg-slate-300 hover:bg-brand-DEFAULT/50 transition-colors"
-                        aria-label="Slide 4"></button>
+                <div class="trust-item">
+                    <i data-lucide="zap"></i>
+                    <span>DOWNLOAD IMEDIATO</span>
+                </div>
+                <div class="trust-item">
+                    <i data-lucide="award"></i>
+                    <span>GARANTIA DE SATISFAÇÃO</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Author -->
-    <section id="autora" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
-        </div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
-                <div
-                    class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-brand-DEFAULT p-1 relative shrink-0 scroll-trigger">
-                    <img src="images/marina.jpg" alt="Marina Coutinho"
-                        class="w-full h-full object-cover rounded-full transition-all duration-500">
-                    <div class="absolute bottom-4 right-4 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-900">
-                    </div>
-                </div>
+    <!-- Guarantee Section -->
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon"><i data-lucide="scissors"></i></div>
+        <div class="separator-line"></div>
+    </div>
+    <section class="section guarantee-section">
+        <div class="container">
+            <div class="guarantee-paper-bg">
+                <div class="tape-strip top-center"></div>
+                <div class="guarantee-content">
+                    <i data-lucide="shield-check" class="guarantee-icon-large pulse-animation-slow"></i>
+                    <div class="guarantee-text">
+                        <h2>Garantia Incondicional</h2>
+                        <div class="guarantee-badge">7 DIAS</div>
+                        <p class="lead">O risco é todo nosso.</p>
+                        <p>Se você não gostar do material, devolvemos <strong>100% do seu dinheiro</strong>.</p>
+                        <p class="small-text">Sem perguntas. Sem burocracia.</p>
 
-                <div class="text-center md:text-left scroll-trigger delay-100">
-                    <h2 class="font-heading text-3xl font-bold mb-2">Marina Coutinho</h2>
-                    <p class="text-brand-accent font-medium mb-6">Instrutora de Yoga | +2.500 alunas</p>
-                    <p class="text-slate-300 leading-relaxed mb-6">
-                        Especialista em Hatha, Vinyasa e Meditação Guiada. Minha missão é facilitar a
-                        vida de
-                        instrutores de yoga, trazendo criatividade e profundidade para suas aulas
-                        através de dinâmicas
-                        testadas e aprovadas.
-                    </p>
-                    <div class="flex justify-center md:justify-start gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-DEFAULT transition-colors"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-DEFAULT transition-colors"><i
-                                class="fa-brands fa-youtube"></i></a>
+                        <div class="guarantee-signature">
+                            <p class="signature-text">FormaArt Team</p>
+                            <span class="signature-label">Assinatura Autorizada</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -586,252 +588,119 @@
     </section>
 
     <!-- FAQ -->
-    <section class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <div class="text-center mb-16 scroll-trigger">
-                <h2 class="font-heading text-3xl font-bold text-slate-900 mb-4">Perguntas Frequentes
-                </h2>
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon"><i data-lucide="scissors"></i></div>
+        <div class="separator-line"></div>
+    </div>
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas <span class="highlight-orange">Frequentes</span></h2>
             </div>
 
-            <div class="space-y-4" id="faq-accordion">
-                <!-- Item 1 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-trigger">
-                    <button
-                        class="w-full px-6 py-4 text-left flex justify-between items-center font-bold text-slate-800 hover:bg-slate-50 transition-colors faq-btn">
-                        Como recebo o material?
-                        <i class="fa-solid fa-chevron-down text-brand-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 faq-content">
-                        <div class="px-6 pb-6 text-slate-600">
-                            O acesso é enviado imediatamente para o seu e-mail após a confirmação do
-                            pagamento. Você
-                            receberá um link para baixar todo o material.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-trigger">
-                    <button
-                        class="w-full px-6 py-4 text-left flex justify-between items-center font-bold text-slate-800 hover:bg-slate-50 transition-colors faq-btn">
-                        O pagamento é seguro?
-                        <i class="fa-solid fa-chevron-down text-brand-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 faq-content">
-                        <div class="px-6 pb-6 text-slate-600">
-                            Sim, utilizamos uma plataforma de pagamentos criptografada e 100% segura.
-                            Seus dados estão
-                            protegidos.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-trigger">
-                    <button
-                        class="w-full px-6 py-4 text-left flex justify-between items-center font-bold text-slate-800 hover:bg-slate-50 transition-colors faq-btn">
-                        Serve para iniciantes?
-                        <i class="fa-solid fa-chevron-down text-brand-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 faq-content">
-                        <div class="px-6 pb-6 text-slate-600">
-                            Com certeza! As dinâmicas são organizadas por nível, então você encontrará
-                            opções perfeitas
-                            para turmas iniciantes, intermediárias e avançadas.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-trigger">
-                    <button
-                        class="w-full px-6 py-4 text-left flex justify-between items-center font-bold text-slate-800 hover:bg-slate-50 transition-colors faq-btn">
-                        Tenho garantia?
-                        <i class="fa-solid fa-chevron-down text-brand-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 faq-content">
-                        <div class="px-6 pb-6 text-slate-600">
-                            Sim, oferecemos garantia de 7 dias. Se você não gostar do material,
-                            devolvemos 100% do seu
-                            dinheiro.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-trigger">
-                    <button
-                        class="w-full px-6 py-4 text-left flex justify-between items-center font-bold text-slate-800 hover:bg-slate-50 transition-colors faq-btn">
-                        Posso acessar pelo celular?
-                        <i class="fa-solid fa-chevron-down text-brand-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 faq-content">
-                        <div class="px-6 pb-6 text-slate-600">
-                            Sim! Todo o material (PDFs e vídeos) é otimizado para ser acessado de
-                            qualquer dispositivo:
-                            celular, tablet ou computador.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 6 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-trigger">
-                    <button
-                        class="w-full px-6 py-4 text-left flex justify-between items-center font-bold text-slate-800 hover:bg-slate-50 transition-colors faq-btn">
-                        O que são as atualizações mensais?
-                        <i class="fa-solid fa-chevron-down text-brand-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 faq-content">
-                        <div class="px-6 pb-6 text-slate-600">
-                            No plano Premium, você recebe novas dinâmicas e conteúdos extras todo mês,
-                            sem custo
-                            adicional, para manter suas aulas sempre renovadas.
-                        </div>
-                    </div>
-                </div>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>1. Preciso ter experiência para começar?</summary>
+                    <p>Não! Os modelos são projetados especificamente para iniciantes, com instruções passo a passo.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>2. Preciso de uma impressora especial?</summary>
+                    <p>Não. Qualquer impressora jato de tinta ou laser comum funciona perfeitamente.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>3. O acesso aos arquivos é imediato?</summary>
+                    <p>Sim! Assim que o pagamento for confirmado, você recebe o acesso por e-mail.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>4. Posso usar com crianças ou em sala de aula?</summary>
+                    <p>Com certeza. O PaperCraft é uma excelente ferramenta educativa para desenvolver coordenação
+                        motora e criatividade.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>5. O conteúdo é vitalício?</summary>
+                    <p>O Kit Mestre possui acesso vitalício. Você pode baixar quando quiser, para sempre.</p>
+                </details>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="py-24 bg-gradient-to-br from-brand-dark to-blue-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20">
-        </div>
-        <!-- Particles/Glow -->
-        <div class="absolute top-0 left-1/4 w-64 h-64 bg-brand-accent/30 rounded-full blur-[80px]">
-        </div>
-        <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-brand-DEFAULT/30 rounded-full blur-[80px]">
-        </div>
-
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h2 class="font-heading text-4xl lg:text-5xl font-bold mb-6 leading-tight">Transforme Suas
-                Aulas de
-                Yoga<br>Hoje Mesmo</h2>
-            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Não perca mais tempo planejando
-                aulas do zero.
-                Tenha em mãos o material mais completo do mercado.</p>
-
-            <a href="#planos"
-                class="inline-block bg-white text-brand-dark text-xl px-10 py-5 rounded-full font-bold shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] hover:scale-105 transition-all duration-300 animate-pulse-slow">
-                Quero Acessar Agora
+    <footer class="footer-cta">
+        <div class="container">
+            <h3>Uma folha de papel pode virar qualquer coisa</h3>
+            <a href="#pricing" class="cta-button pulse-animation">
+                COMEÇAR AGORA COM FORMAART
             </a>
-
-            <p class="mt-6 text-sm text-blue-200 opacity-80">Acesso imediato • Compra segura •
-                Satisfação garantida</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-heading font-bold text-xl text-white flex items-center gap-2">
-                <i class="fa-solid fa-spa text-brand-accent"></i>
-                <span>Yoga<span class="text-brand-DEFAULT">Dinâmicas</span></span>
-            </div>
-            <div class="text-sm">
-                &copy; 2024 Yoga Dinâmicas. Todos os direitos reservados.
-            </div>
-            <div class="flex gap-6 text-sm">
-                <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
-                <a href="#" class="hover:text-white transition-colors">Privacidade</a>
-            </div>
+            <p class="copyright">© 2024 FormaArt PaperCraft. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- Upsell Modal -->
-    <div id="upsell-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
-        aria-modal="true">
-        <!-- Background backdrop -->
-        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop">
-        </div>
+    <!-- Upsell Popup Modal -->
+    <div id="upsellModal" class="upsell-modal">
+        <div class="upsell-overlay" onclick="closeUpsellPopup()"></div>
+        <div class="upsell-content">
+            <div class="upsell-banner">
+                🚨 NÃO SAIA DA PÁGINA AGORA!
+            </div>
+            <button class="close-modal" onclick="closeUpsellPopup()">&times;</button>
 
-        <div class="fixed inset-0 z-10 overflow-y-auto">
-            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-                <!-- Modal panel -->
-                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                    id="modal-panel">
+            <div class="upsell-body">
+                <h2>Oferta Especial <span class="highlight-orange">Exclusiva</span> Para Você!</h2>
+                <p class="upsell-subtitle">Estamos com uma oferta especial do nosso <strong>Kit Mestre</strong> — o
+                    nosso melhor kit!</p>
 
-                    <!-- Header/Title Section -->
-                    <div
-                        class="bg-gradient-to-r from-brand-dark to-brand-DEFAULT px-6 py-6 text-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-white/10 opacity-50"></div>
-                        <!-- Close button -->
-                        <button type="button" onclick="closeUpsellModal()"
-                            class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors">
-                            <i class="fa-solid fa-xmark text-xl"></i>
-                        </button>
+                <div class="price-comparison">
+                    <div class="old-price-large">De R$ 24,90</div>
+                    <div class="arrow-down">↓</div>
+                    <div class="new-price-large">Por apenas R$ 17,90</div>
+                    <p class="economy-badge">Economize R$ 7,00 agora!</p>
 
-                        <h3 class="relative text-xl font-heading font-bold text-white leading-tight mb-2"
-                            id="modal-title">
-                            Aproveite Agora: Atualize para o Plano Premium por apenas <span
-                                class="text-yellow-300">R$17,90</span>
-                        </h3>
-                        <p class="relative text-blue-100 text-sm">
-                            Desbloqueie todos os benefícios extras, conteúdos avançados e dinâmicas exclusivas.
-                        </p>
-                    </div>
-
-                    <!-- Body -->
-                    <div class="px-6 py-6">
-                        <!-- Bullets -->
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-start gap-3 text-sm text-slate-700">
-                                <div
-                                    class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                                    <i class="fa-solid fa-check text-green-600 text-xs"></i>
-                                </div>
-                                <span class="font-medium">Mais atividades exclusivas</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700">
-                                <div
-                                    class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                                    <i class="fa-solid fa-check text-green-600 text-xs"></i>
-                                </div>
-                                <span class="font-medium">Mais profundidade nas aulas</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700">
-                                <div
-                                    class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                                    <i class="fa-solid fa-check text-green-600 text-xs"></i>
-                                </div>
-                                <span class="font-medium">Conteúdos avançados para elevar sua didática</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-slate-700">
-                                <div
-                                    class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                                    <i class="fa-solid fa-check text-green-600 text-xs"></i>
-                                </div>
-                                <span class="font-medium">Atualização imediata da sua compra</span>
-                            </li>
-                        </ul>
-
-                        <!-- Urgency -->
-                        <div
-                            class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-6 text-center animate-pulse-slow">
-                            <p class="text-sm text-yellow-800 font-semibold">
-                                <i class="fa-solid fa-clock mr-1"></i> Oferta exclusiva para quem está comprando agora.
-                            </p>
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="space-y-3">
-                            <button onclick="acceptUpsell()"
-                                class="w-full bg-green-600 hover:bg-green-700 text-white text-lg font-bold py-4 rounded-xl shadow-lg shadow-green-600/30 hover:shadow-green-600/50 transform hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group">
-                                Quero o Plano Premium
-                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                            </button>
-
-                            <button onclick="declineUpsell()"
-                                class="w-full text-slate-400 text-sm font-medium hover:text-slate-600 transition-colors py-2">
-                                Continuar com o Plano Básico
-                            </button>
+                    <div class="countdown-timer">
+                        <p>Esta oferta expira em:</p>
+                        <div class="timer-display">
+                            <div class="timer-box">
+                                <span id="minutes">03</span>
+                                <small>min</small>
+                            </div>
+                            <span class="timer-colon">:</span>
+                            <div class="timer-box">
+                                <span id="seconds">00</span>
+                                <small>secs</small>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <a href="https://www.ggcheckout.com/checkout/v3/NZRtVEpfrupFpPnjani6"
+                    class="cta-button pulse-animation upsell-cta">QUERO ESTE KIT</a>
+
+                <a href="https://www.ggcheckout.com/checkout/v3/TThWoxfds8Q8Ve4WaIoj" class="decline-button-link">
+                    <button class="decline-button">Não obrigado, prefiro pagar mais caro depois e perder os
+                        bônus.</button>
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Purchase Notification Toast -->
+    <div id="toast" class="toast-wrapper">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <i data-lucide="check-circle-2"></i>
+            </div>
+            <div class="toast-text">
+                <p class="toast-title"><span id="toast-name">Mariana</span> de <span id="toast-location">São
+                        Paulo</span></p>
+                <p class="toast-desc">Comprou o <strong>Kit Mestre</strong> agora mesmo</p>
+                <span class="toast-time">há 2 minutos</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
     <script src="script.js"></script>
 </body>
 
