@@ -1,0 +1,342 @@
+/* Upsell Modal Styles */
+.upsell-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.upsell-modal.active {
+    display: block;
+}
+
+.upsell-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.upsell-content {
+    position: relative;
+    max-width: 550px;
+    width: 90%;
+    margin: 5vh auto;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.upsell-banner {
+    background: var(--color-red);
+    color: white;
+    text-align: center;
+    padding: 12px 15px;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    animation: pulse-banner 2s infinite;
+}
+
+@keyframes pulse-banner {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    color: var(--color-red);
+}
+
+.upsell-body {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.upsell-body h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.upsell-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.price-comparison {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+    padding: 25px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 2px dashed var(--color-orange);
+    position: relative;
+}
+
+.old-price-large {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: line-through;
+    font-family: var(--font-heading);
+    margin-bottom: 5px;
+}
+
+.arrow-down {
+    font-size: 2rem;
+    color: var(--color-orange);
+    margin: 5px 0;
+    line-height: 1;
+}
+
+.new-price-large {
+    font-size: 2.8rem;
+    color: var(--color-green);
+    font-weight: 800;
+    font-family: var(--font-heading);
+    margin: 8px 0;
+    line-height: 1;
+}
+
+.economy-badge {
+    background: var(--color-green);
+    color: white;
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* Compact Minimalist Timer - Inside Price Card */
+.countdown-timer {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px dashed rgba(255, 159, 28, 0.3);
+}
+
+.countdown-timer p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.timer-display {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--color-red);
+    padding: 6px 14px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(231, 29, 54, 0.3);
+}
+
+.timer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 32px;
+}
+
+.timer-box span {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    line-height: 1;
+}
+
+.timer-box small {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.6rem;
+    margin-top: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.timer-colon {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 1px;
+    padding-bottom: 8px;
+}
+
+.upsell-cta {
+    width: 100%;
+    margin: 20px 0 12px;
+    font-size: 1.5rem !important;
+    padding: 14px 30px !important;
+}
+
+.decline-button {
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 8px;
+    transition: color 0.2s;
+    font-family: var(--font-body);
+    line-height: 1.3;
+}
+
+.decline-button:hover {
+    color: var(--color-red);
+}
+
+.decline-button-link {
+    text-decoration: none;
+    display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .upsell-content {
+        width: 95%;
+        margin: 2vh auto;
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+
+    .upsell-banner {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+
+    .close-modal {
+        top: 50px;
+        right: 10px;
+        font-size: 1.8rem;
+    }
+
+    .upsell-body {
+        padding: 25px 15px;
+    }
+
+    .upsell-body h2 {
+        font-size: 1.5rem;
+    }
+
+    .upsell-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .price-comparison {
+        padding: 20px 15px;
+    }
+
+    .old-price-large {
+        font-size: 1.1rem;
+    }
+
+    .new-price-large {
+        font-size: 2.2rem;
+    }
+
+    .economy-badge {
+        font-size: 0.85rem;
+        padding: 5px 14px;
+    }
+
+    .timer-display {
+        padding: 6px 12px;
+    }
+
+    .timer-box span {
+        font-size: 1.4rem;
+    }
+
+    .timer-box small {
+        font-size: 0.6rem;
+    }
+
+    .upsell-cta {
+        font-size: 1.3rem !important;
+        padding: 12px 25px !important;
+    }
+
+    .decline-button {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .upsell-body h2 {
+        font-size: 1.3rem;
+    }
+
+    .new-price-large {
+        font-size: 2rem;
+    }
+
+    .timer-box span {
+        font-size: 1.2rem;
+    }
+
+    .upsell-cta {
+        font-size: 1.2rem !important;
+    }
+}
