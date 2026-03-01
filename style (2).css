@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Especial! | Massagem Tântrica</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?css=Cormorant+Upright:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&family=Montserrat:wght@700;800;900&family=Playfair+Display+SC:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- UTMify -->
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+    <script>
+        window.pixelId = "69362cc2765d6e618e711497";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+</head>
+
+<body>
+    <div class="top-bar">
+        ⚠️ ATENÇÃO: ESSA OFERTA É ÚNICA E DESAPARECERÁ AO SAIR DA PÁGINA OU QUANDO O CRONÔMETRO ZERAR: <span id="timer"
+            class="timer">20:00</span>
+    </div>
+
+    <main class="container">
+        <header class="header text-center reveal">
+            <h1 class="title">Surpresa Especial para Voce!</h1>
+            <p class="subtitle">Voce ia levar so o basico... mas olha o que a gente preparou:</p>
+            <div class="highlight-box">
+                <p>Liberamos apenas <span>AGORA</span> para VOCE uma versao melhorada do plano basico com mais conteudo
+                    — por apenas <strong>R$ 27,90!</strong></p>
+            </div>
+        </header>
+
+        <section class="benefits-section reveal">
+            <div class="benefits-card">
+                <ul class="benefits-list">
+                    <li class="highlight-item"><i data-lucide="check-circle-2" class="icon-gold"></i> <strong>130 Video
+                            Aulas</strong></li>
+                    <li><i data-lucide="check" class="icon-red"></i> Mapa Erogeno</li>
+                    <li><i data-lucide="check" class="icon-red"></i> Aulas de Massagem Tantrica</li>
+                    <li><i data-lucide="check" class="icon-red"></i> Aulas de Massagem Orgastica</li>
+                    <li class="plus"><i data-lucide="plus-circle" class="icon-gold"></i> Tecnicas Eroticas de Toque
+                        Sensitivo</li>
+                    <li class="plus"><i data-lucide="plus-circle" class="icon-gold"></i> Aulas de Massagem Lingam e Yoni
+                        <span class="badge">(versao introdutoria)</span>
+                    </li>
+                    <li class="plus"><i data-lucide="plus-circle" class="icon-gold"></i> Tecnicas de Pompoarismo Basico
+                        Feminino</li>
+                    <li class="plus"><i data-lucide="plus-circle" class="icon-gold"></i> Dicas de Preliminares e
+                        Posicoes de Dominio</li>
+                    <li class="plus"><i data-lucide="plus-circle" class="icon-gold"></i> Musicas Sensuais para
+                        Ambientacao</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="comparison-section reveal">
+            <div class="plan-card basic">
+                <h3>Plano Basico</h3>
+                <div class="price">R$ 19,90</div>
+                <div class="payment-type">Pagamento unico</div>
+                <div class="features">10 aulas</div>
+            </div>
+
+            <div class="plan-card premium">
+                <div class="recommended-badge">OFERTA ATUAL</div>
+                <h3>Plano Premium</h3>
+                <div class="price">R$ 27,90</div>
+                <div class="payment-type">Pagamento unico</div>
+                <div class="features">130 aulas + bonus</div>
+            </div>
+        </section>
+
+        <section class="decision-section text-center reveal">
+            <p class="decision-text">
+                Voce pode ate levar o plano basico por R$19,90...<br><br>
+                Mas se ja decidiu dar esse passo, vale a pena garantir o upgrade e comecar com mais profundidade, mais
+                prazer, mais tecnica.<br><br>
+                <strong class="text-gold">A diferenca e pequena no preco — mas gigante no resultado.</strong>
+            </p>
+
+            <!-- TODO: Replace with real checkout link for the 29,90 plan if provided in the future -->
+            <a href="https://ggcheckout.com.br/checkout/v5/liiKhJJFxREJLjIRrAXH" class="btn-primary" id="btn-premium">
+                SIM! QUERO O PLANO PREMIUM POR R$ 27,90
+            </a>
+
+            <a href="https://ggcheckout.com.br/checkout/v5/C1PledDfclinAbjWzrfM" class="btn-secondary" id="btn-basic">
+                CLIQUE AQUI, Se quiser continuar para o Plano Basico de R$ 19,90
+            </a>
+        </section>
+    </main>
+
+    <!-- Overlay when timer expires -->
+    <div id="expired-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <i data-lucide="clock-4" class="expired-icon"></i>
+            <h2>Tempo Esgotado!</h2>
+            <p>Esta oferta exclusiva não está mais disponível.</p>
+            <a href="../online/index.html" class="btn-primary-small">Voltar para a página inicial</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
