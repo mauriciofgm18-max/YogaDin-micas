@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segredo Tantrico - Fernanda Roxy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    background-color: #070707; 
+    background-image: radial-gradient(circle at 50% 0%, rgba(192, 57, 43, 0.25) 0%, transparent 80%);
+    background-attachment: fixed;
+    color: #fff; 
+    font-family: 'Georgia', serif; 
+  }
+
+  .countdown-bar {
+    background: #8b0000; text-align: center; padding: 10px;
+    font-size: 14px; font-family: Arial, sans-serif; letter-spacing: 1px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .countdown-bar span { color: #ffd700; font-weight: bold; }
+
+  .hero { text-align: center; padding: 60px 20px 40px; max-width: 900px; margin: 0 auto; }
+  .hero h1 { font-size: clamp(28px, 5vw, 52px); font-weight: 900; text-transform: uppercase; line-height: 1.2; color: #fff; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+  .hero h1 em { display: block; font-style: italic; color: #c0392b; font-size: clamp(26px, 4.5vw, 48px); text-shadow: 0 2px 10px rgba(192,57,43,0.3); }
+  .hero .subtitle { font-size: clamp(14px, 2vw, 18px); color: #e8c94b; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px; font-family: Arial, sans-serif; }
+  .hero-img { width: 100%; max-width: 720px; border-radius: 12px; margin: 0 auto 30px; display: block; object-fit: cover; }
+
+  .bullets { max-width: 700px; margin: 0 auto 30px; text-align: left; padding: 0 20px; }
+  .bullet-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; font-size: 15px; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; color: #eee; }
+  .bullet-icon { background: #c0392b; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+
+  .social-proof { text-align: center; color: #e8c94b; font-size: 16px; margin: 10px 0 30px; font-family: Arial, sans-serif; }
+
+  .btn-cta { display: inline-block; background: linear-gradient(135deg, #c0392b, #e74c3c); color: #fff; font-size: 18px; font-weight: bold; text-transform: uppercase; padding: 18px 50px; border-radius: 50px; border: none; cursor: pointer; text-decoration: none; letter-spacing: 1px; box-shadow: 0 4px 20px rgba(192,57,43,0.5); transition: transform 0.2s, box-shadow 0.2s; margin: 10px auto; }
+  .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,57,43,0.7); }
+  .cta-center { text-align: center; margin: 30px 0; }
+
+  .section-title { text-align: center; font-size: clamp(20px, 3vw, 32px); font-weight: bold; margin: 60px 20px 30px; color: #fff; font-family: Arial, sans-serif; }
+
+  .members-section { max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
+  .members-section p { font-size: 16px; color: #ccc; margin-bottom: 20px; font-family: Arial, sans-serif; }
+  .members-section p strong { color: #fff; }
+  .members-section p em { color: #c0392b; font-style: italic; }
+  .members-img { width: 100%; border-radius: 12px; border: 1px solid #2a2a2a; }
+
+  .techniques-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; padding: 0 20px 40px; }
+  .technique-card { text-align: center; }
+  .technique-card .card-img { width: 100%; height: 200px; border-radius: 10px; margin-bottom: 14px; object-fit: cover; filter: grayscale(10%); box-shadow: 0 8px 20px rgba(0,0,0,0.4); border: 1px solid rgba(192,57,43,0.1); transition: filter 0.3s, box-shadow 0.3s, border-color 0.3s; }
+  .technique-card:hover .card-img { filter: grayscale(0%); border-color: rgba(192,57,43,0.4); box-shadow: 0 10px 30px rgba(192,57,43,0.2); }
+  .technique-card h3 { color: #c0392b; font-style: italic; font-size: 22px; margin-bottom: 8px; }
+  .technique-card p { color: #bbb; font-size: 14px; line-height: 1.6; font-family: Arial, sans-serif; }
+
+  .content-list { max-width: 700px; margin: 0 auto; padding: 0 20px 40px; }
+  .content-list-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #1a1a1a; font-family: Arial, sans-serif; font-size: 15px; color: #ddd; }
+  .check-icon { background: #c0392b; border-radius: 50%; width: 24px; height: 24px; min-width: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+  .content-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px auto; max-width: 700px; padding: 0 20px; }
+  .badge { background: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 8px 14px; font-size: 13px; color: #ccc; font-family: Arial, sans-serif; }
+
+  .why-section { background: #0f0f0f; padding: 60px 20px; margin: 40px 0; }
+  .why-inner { max-width: 800px; margin: 0 auto; }
+  .why-inner h2 { text-align: center; font-size: clamp(20px, 3vw, 28px); margin-bottom: 24px; color: #fff; }
+  .why-inner p { color: #bbb; font-size: 16px; line-height: 1.8; font-family: Arial, sans-serif; margin-bottom: 16px; }
+  .why-list { list-style: none; margin: 20px 0; }
+  .why-list li { color: #ddd; font-size: 15px; padding: 6px 0; font-family: Arial, sans-serif; }
+  .why-list li::before { content: "■ "; color: #c0392b; }
+
+  .creator-section { text-align: center; padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+  .creator-label { display: inline-block; border: 1px solid #c0392b; border-radius: 30px; padding: 8px 24px; font-size: 13px; color: #c0392b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px; font-family: Arial, sans-serif; }
+  .creator-photo { width: 160px; height: 160px; border-radius: 50%; border: 3px solid #c0392b; object-fit: cover; margin: 0 auto 20px; display: block; }
+  .creator-name { font-size: 36px; color: #c0392b; font-style: italic; margin-bottom: 16px; }
+  .creator-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
+  .tag { border: 1px solid #555; border-radius: 20px; padding: 6px 16px; font-size: 13px; color: #ccc; font-family: Arial, sans-serif; }
+  .creator-section p { text-align: left; color: #bbb; font-size: 16px; line-height: 1.8; font-family: Arial, sans-serif; margin-bottom: 14px; }
+  .creator-section p strong { color: #fff; }
+
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
+  .testimonial-img { width: 100%; border-radius: 10px; border: 1px solid #2a2a2a; }
+
+  .bonus-section { padding: 60px 20px; background: #0f0f0f; }
+  .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+  .bonus-card { background: rgba(26,26,26,0.3); backdrop-filter: blur(8px); border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; text-align: center; padding-bottom: 20px; }
+  .bonus-card img { width: 100%; height: 200px; object-fit: cover; }
+  .bonus-badge { display: inline-block; background: #c0392b; color: #fff; border-radius: 20px; padding: 4px 18px; font-size: 13px; font-weight: bold; margin: 14px 0 10px; font-family: Arial, sans-serif; }
+  .bonus-card p { color: #bbb; font-size: 14px; line-height: 1.6; padding: 0 16px; font-style: italic; font-family: Georgia, serif; }
+
+  .urgency-section { background: #0a0a0a; text-align: center; padding: 80px 20px; }
+  .urgency-section h2 { font-size: clamp(22px, 4vw, 40px); text-transform: uppercase; font-family: Arial, sans-serif; }
+  .urgency-section h2 span { color: #c0392b; }
+  .urgency-section p { color: #888; text-transform: uppercase; font-size: 14px; margin: 12px 0; font-family: Arial, sans-serif; letter-spacing: 1px; }
+  .urgency-tagline { color: #ddd; font-size: 18px; margin: 16px 0 30px; font-family: Georgia, serif; }
+
+  .pricing-section { padding: 60px 20px; text-align: center; }
+  .attention-box { display: inline-block; border: 2px solid #c0392b; color: #c0392b; border-radius: 8px; padding: 10px 30px; font-weight: bold; font-size: 18px; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+  .pricing-subtitle { color: #aaa; font-size: 16px; margin-bottom: 40px; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+  .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto 40px; align-items: start; }
+  .plan-card { background: rgba(19,18,18,0.7); backdrop-filter: blur(8px); border: 1px solid #2a2a2a; border-radius: 12px; padding: 40px 30px; text-align: center; position: relative; display: flex; flex-direction: column; }
+  .plan-card.premium { border-color: #eaca59; border-width: 1px; }
+  .plan-card.basic { border-color: #2a2a2a; }
+
+  .plan-name { font-size: 28px; font-weight: bold; color: #fff; text-transform: uppercase; margin-bottom: 10px; font-family: 'Georgia', serif; }
+  .plan-sub { color: #888; font-size: 13px; font-family: Arial, sans-serif; margin-bottom: 30px; letter-spacing: 0.5px; }
+
+  .plan-popular-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #eaca59; color: #000; padding: 6px 20px; border-radius: 20px; font-size: 11px; font-weight: bold; white-space: nowrap; font-family: Arial, sans-serif; letter-spacing: 1px; }
+
+  .plan-features { list-style: none; margin-bottom: 40px; text-align: left; margin-left: auto; margin-right: auto; }
+  .plan-features li { padding: 8px 0; color: #bbb; font-size: 13px; font-family: Arial, sans-serif; display: flex; align-items: center; gap: 10px; }
+  .plan-card.basic .plan-features li::before { content: "•"; color: #d93850; font-size: 20px; line-height: 1; }
+  .plan-card.premium .plan-features li::before { content: "•"; color: #eaca59; font-size: 20px; line-height: 1; }
+
+  .plan-price-old { color: #666; font-size: 12px; font-family: Arial, sans-serif; text-transform: lowercase; margin-bottom: 4px; text-decoration: line-through; }
+  .plan-price { font-size: 56px; font-weight: bold; font-family: 'Georgia', serif; line-height: 1; margin: 10px 0; }
+  .plan-card.basic .plan-price { color: #d93850; }
+  .plan-card.premium .plan-price { color: #eaca59; }
+  .plan-price small { font-size: 28px; font-weight: normal; margin-right: 4px; }
+
+  .plan-period { color: #666; font-size: 11px; font-weight: bold; margin-bottom: 24px; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+  .btn-plan { display: block; width: 100%; border-radius: 50px; padding: 18px 20px; font-size: 15px; font-weight: bold; text-transform: uppercase; text-decoration: none; font-family: Arial, sans-serif; text-align: center; margin-bottom: 16px; transition: transform 0.2s, opacity 0.2s; border: none; cursor: pointer; }
+  .btn-plan:hover { transform: scale(1.03); opacity: 0.9; }
+  .btn-plan.basic { background: #d93850; color: #fff; box-shadow: 0 4px 15px rgba(217, 56, 80, 0.3); }
+  .btn-plan.premium { background: #eaca59; color: #000; box-shadow: 0 4px 15px rgba(234, 202, 89, 0.3); }
+
+  .plan-undertext { font-size: 11px; font-family: Arial, sans-serif; line-height: 1.4; font-weight: bold; }
+  .plan-card.basic .plan-undertext { color: #d93850; }
+  .plan-card.premium .plan-undertext { color: #eaca59; }
+  .payment-img { max-width: 250px; width: 100%; margin: 10px auto 16px; display: block; filter: grayscale(100%) opacity(60%); }
+  
+  @media (max-width: 768px) {
+    .plans-grid { grid-template-columns: 1fr; max-width: 400px; }
+  }
+
+  .faq-section { max-width: 700px; margin: 60px auto; padding: 0 20px; }
+  .faq-item { border-bottom: 1px solid #222; margin-bottom: 4px; }
+  .faq-question { width: 100%; background: none; border: none; color: #fff; font-size: 16px; text-align: left; padding: 18px 0; cursor: pointer; font-family: Arial, sans-serif; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+  .faq-question::after { content: "+"; font-size: 22px; color: #c0392b; }
+  .faq-item.active .faq-question::after { content: "−"; }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: #aaa; font-size: 15px; line-height: 1.7; font-family: Arial, sans-serif; }
+  .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 16px; }
+
+  footer { text-align: center; padding: 30px 20px; color: #444; font-size: 13px; font-family: Arial, sans-serif; border-top: 1px solid #1a1a1a; }
+  footer a { color: #666; text-decoration: none; }
+  footer a:hover { color: #c0392b; }
+
+  /* NOTIFICAÇÃO SOCIAL PROOF */
+  .notif {
+    position: fixed; bottom: 24px; left: 20px;
+    background: linear-gradient(90deg, #c0392b 0%, rgba(20,20,20,0.95) 100%);
+    border-radius: 12px;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    transform: translateX(calc(-100% - 30px));
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(192, 57, 43, 0.1);
+  }
+  .notif.show { transform: translateX(0); }
+  .notif-text { display: flex; align-items: center; gap: 6px; line-height: 1; font-size: 15px; }
+  .notif-name { color: #ffffff; font-weight: bold; }
+  .notif-action { color: #ffffff; }
+  .notif-plan { color: #e8c94b; font-weight: bold; }
+
+  .divider { border: none; border-top: 1px solid #1a1a1a; max-width: 600px; margin: 0 auto; }
+
+  @media (max-width: 600px) {
+    .techniques-grid, .plans-grid, .bonus-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  }
+
+  /* GLOBAL FLUIDITY & ANIMATIONS */
+  html { scroll-behavior: smooth; }
+  body { opacity: 0; animation: fadeInBody 0.5s ease forwards; }
+  @keyframes fadeInBody { to { opacity: 1; } }
+
+  /* PAGE TRANSITION OVERLAY */
+  .page-transition-overlay {
+    position: fixed; inset: 0; background: #050505; z-index: 99999;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+  }
+  body.fade-out .page-transition-overlay { opacity: 1; pointer-events: auto; }
+
+  /* SCROLL REVEAL STARTING STATE */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  /* BUTTON MICRO-INTERACTIONS & PULSE */
+  .btn-cta, .btn-upgrade, .btn-plan, .gender-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  }
+  .btn-cta:hover, .btn-upgrade:hover, .btn-plan:hover {
+    transform: scale(1.03) !important;
+  }
+  @keyframes pulseSubtle {
+    0% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(192, 57, 43, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0); }
+  }
+  .btn-cta, .btn-plan.premium { animation: pulseSubtle 2.5s infinite; }
+
+  /* CARDS HOVER */
+  .technique-card, .bonus-card, .plan-card {
+    transition: transform 0.3s ease, border-color 0.3s ease !important;
+  }
+  .technique-card:hover, .bonus-card:hover, .plan-card:hover {
+    transform: translateY(-6px) !important;
+    border-color: #c0392b !important;
+  }
+
+  /* COUNTDOWN TICK */
+  #countdown { display: inline-block; }
+  @keyframes tickPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .tick-anim { animation: tickPop 0.15s ease-out; }
+</style>
+</head>
+<body>
+
+<!-- COUNTDOWN -->
+<div class="countdown-bar">
+  OFERTA EXPIRA HOJE! FALTAM <span id="countdown">13:00:00</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>
+    TECNICAS DE MASSAGEM TANTRICA ORGASTICA QUE ESTAO
+    <em>TRANSFORMANDO A INTIMIDADE DE CASAIS QUE QUEREM SENTIR MUITO MAIS PRAZER.</em>
+  </h1>
+  <p class="subtitle">FACA ISSO E SEU PARCEIRO(A) NUNCA MAIS VAI TE TIRAR DA CABECA! 🔥</p>
+  <img class="hero-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/vsl-gif.gif" alt="Video de Apresentacao">
+</section>
+
+<!-- BULLETS -->
+<div class="bullets">
+  <div class="bullet-item">
+    <div class="bullet-icon">✓</div>
+    <span>PASSO A PASSO, DESDE COMO CRIAR CONEXAO ATE COMO PROPORCIONAR O MAIOR PRAZER DA SUA VIDA E DO SEU PARCEIRO(A)</span>
+  </div>
+  <div class="bullet-item">
+    <div class="bullet-icon">✓</div>
+    <span>DEMONSTRACOES REAIS EM HOMENS E MULHERES</span>
+  </div>
+  <div class="bullet-item">
+    <div class="bullet-icon">✓</div>
+    <span>PAGAMENTO SEGURO, COM GARANTIA DE 7 DIAS E ACESSO IMEDIATO VIA E-MAIL E WHATSAPP</span>
+  </div>
+</div>
+
+<div class="social-proof">Mais de 15 mil alunos satisfeitos ★★★★★</div>
+<div class="cta-center"><a href="#planos" class="btn-cta">Garantir Minha Vaga!</a></div>
+
+<hr class="divider" style="margin: 40px auto;">
+
+<!-- MEMBERS AREA -->
+<section class="members-section">
+  <h2 class="section-title" style="margin-top:0">Veja Como é a Area de Membros (Alunos)</h2>
+  <p>Acesse as aulas de onde voce quiser: computador, site, celular ou tablet.</p>
+  <img class="members-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/AREA%20DE%20MEMBROS.PNG" alt="Area de Membros">
+  <p style="margin-top:20px;">Sao mais de 130 <strong>aulas praticas e teoricas para homens e mulheres</strong>, com <strong>demonstracoes reais em video <em>(daquele jeito).</em></strong></p>
+</section>
+
+<hr class="divider">
+
+<!-- TECHNIQUES -->
+<h2 class="section-title">As Tecnicas Orgasticas Mais Poderosas!</h2>
+<div class="techniques-grid">
+  <div class="technique-card">
+    <img class="card-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/Massagem%20Nuru.png" alt="Massagem Nuru">
+    <h3>Massagem Nuru</h3>
+    <p>A arte da massagem Nuru corpo a corpo, com demonstracoes reais e tecnicas exclusivas <em>(ideal para aumentar o tesao e a sensibilidade do corpo).</em></p>
+  </div>
+  <div class="technique-card">
+    <img class="card-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/Massagem%20Org%C3%A1stica.png" alt="Massagem Orgastica">
+    <h3>Massagem Orgastica</h3>
+    <p>Saiba como proporcionar e experimentar orgasmos intensos atraves das tecnicas tantricas orgasticas.</p>
+  </div>
+  <div class="technique-card">
+    <img class="card-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/Massagem%20Sensitiva.png" alt="Massagem Sensitiva">
+    <h3>Massagem Sensitiva</h3>
+    <p>Aprenda a despertar sensacoes intensas por meio de toques precisos e tecnicas sensitivas.</p>
+  </div>
+  <div class="technique-card">
+    <img class="card-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/Massagem%20T%C3%A2ntrica.png" alt="Massagem Tantrica">
+    <h3>Massagem Tantrica</h3>
+    <p>Domine tecnicas ancestrais do tantra para elevar o prazer e viver uma experiencia sexual mais profunda.</p>
+  </div>
+  <div class="technique-card">
+    <img class="card-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/T%C3%A9cnicas%20Esguicho.png" alt="Tecnicas de Esguicho">
+    <h3>Tecnicas de Esguicho (Squirting)</h3>
+    <p>Tecnicas precisas para proporcionar e experimentar o esguicho feminino.</p>
+  </div>
+  <div class="technique-card">
+    <img class="card-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/Sexo%20Oral.png" alt="Sexo Oral">
+    <h3>Sexo Oral</h3>
+    <p>Domine as tecnicas mais eficazes de sexo oral para proporcionar prazer intenso e duradouro <em>(nada de so uma chupadinha basica ou boquete padrao).</em></p>
+  </div>
+  <div class="technique-card">
+    <img class="card-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/Massagem%20Tailandesa.png" alt="Massagem Tailandesa">
+    <h3>Massagem Tailandesa</h3>
+    <p>Relaxamento profundo com um toque sensual que transforma a experiencia corporal.</p>
+  </div>
+  <div class="technique-card">
+    <img class="card-img" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/Pontos%20Er%C3%B3genos.png" alt="Pontos Erogenos">
+    <h3>Pontos Erogenos</h3>
+    <p>Voce descobrira atraves do mapa do prazer, todos os pontos que fazem ter orgasmos extremos.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CONTENT LIST -->
+<h2 class="section-title">Conteudo Completo do Curso</h2>
+<div class="content-list">
+  <div class="content-list-item"><div class="check-icon">✓</div>Introducao ao Tantra</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Teoria: Como se profissionalizar e trabalhar com o Tantra</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Teoria sobre a Massagem Erotica</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Toda a historia sobre o Tantra</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Massagem Relaxante</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Massagem Erotica</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Massagem Japonesa</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Massagem Tantrica</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Massagem Lingam</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Massagem Yoni</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Massagem Sensitiva</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Massagem Orgastica</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Pontos de Prazer</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Sexo Oral</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Esguicho Feminino</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Aulas praticas com modelos reais – Pompoarismo Feminino e Masculino</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Tecnicas de Posicoes</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Neuropatia para Libido Sexual</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Mapa Erogeno dos Pontos de Prazer</div>
+  <div class="content-list-item"><div class="check-icon">✓</div>Playlists Ambiente para Tantra</div>
+</div>
+<div class="content-badges">
+  <div class="badge">✓ Mais de 130 videos com modelos reais</div>
+  <div class="badge">✓ Acesso vitalicio</div>
+  <div class="badge">✓ Atualizacoes mensais</div>
+</div>
+<div class="cta-center"><a href="#planos" class="btn-cta">Garantir Minha Vaga!</a></div>
+
+<!-- WHY BUY -->
+<section class="why-section">
+  <div class="why-inner">
+    <h2>Por Que Eu Deveria Comprar?</h2>
+    <p>O curso que voce esta prestes a acessar nao e so mais uma tecnica generica de massagem ou conexao. E uma experiencia profunda, pratica e transformadora, desenvolvida por sexologos e terapeutas sexuais para despertar zonas do corpo que estavam "adormecidas", fazendo o prazer surgir de forma intensa, consciente e libertadora.</p>
+    <p>Enquanto muitos cursos cobram caro por conteudos rasos e demonstracoes artificiais, neste curso voce vai aprender com modelos reais, em videos claros, envolventes e respeitosos, onde cada movimento e mostrado exatamente como deve ser feito. Voce vai dominar tecnicas como:</p>
+    <ul class="why-list">
+      <li>Massagem Tantrica – para desbloquear energia e ampliar o prazer</li>
+      <li>Massagem Nuru – contato corporal intenso e envolvente</li>
+      <li>Massagem Orgastica – prazer em niveis nunca antes experimentados</li>
+      <li>Massagem Sensitiva e Erotica – estimulo consciente de todo o corpo</li>
+      <li>Massagem Lingam – para aprofundar a conexao intima com o parceiro</li>
+    </ul>
+    <p>Com mais de 130 videoaulas, entre teoria e pratica, organizadas passo a passo, em um ambiente seguro e didatico, guiado por uma professora experiente. Nao vai ser apenas aprender tecnicas basicas. Voce vai aprender a despertar o prazer de verdade.</p>
+  </div>
+</section>
+
+<!-- CREATOR -->
+<section class="creator-section">
+  <div class="creator-label">QUEM CRIOU O CONTEUDO?</div>
+  <img class="creator-photo" src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/FOTO%20FERNANDA%20TERAPEUTA.jpg" alt="Fernanda Roxy">
+  <div class="creator-name">Fernanda Roxy</div>
+  <div class="creator-tags">
+    <span class="tag">Educadora Sexual</span>
+    <span class="tag">Terapeuta Tantrica</span>
+    <span class="tag">Criadora do Segredo Tantrico</span>
+    <span class="tag">+15 Mil Alunos</span>
+  </div>
+  <p>Eu sou <strong>Fernanda Roxy</strong>, educadora sexual, terapeuta tantrica e a mente por tras do Segredo Tantrico.</p>
+  <p>Criei esse espaco para pessoas que sentem que existe muito mais prazer, conexao e liberdade possiveis do que aquilo que aprenderam ate hoje. Aqui nao existe julgamento, culpa ou tabu. Existe corpo, desejo, presenca e verdade.</p>
+  <p>Ao longo dos ultimos anos, trabalhei com <strong>milhares de homens e mulheres</strong>, conduzindo aulas, vivencias, retiros e experiencias intimas que transformaram nao so a forma como as pessoas fazem sexo, mas como se relacionam com o proprio corpo e com quem dividem a cama.</p>
+  <p>Sou professora certificada em sexo e tantra, com estudos em psicologia, e ensino exatamente aquilo que vivo, pratico e observo funcionar na vida real.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<h2 class="section-title">Comentarios Reais</h2>
+<div class="testimonials-grid">
+  <img class="testimonial-img" src="https://www.segredo-tantrico.shop/wp-content/uploads/2025/12/Screenshot_33.png" alt="Depoimento 1">
+  <img class="testimonial-img" src="https://www.segredo-tantrico.shop/wp-content/uploads/2025/12/Screenshot_35.png" alt="Depoimento 2">
+  <img class="testimonial-img" src="https://www.segredo-tantrico.shop/wp-content/uploads/2025/12/Screenshot_34.png" alt="Depoimento 3">
+</div>
+
+<!-- BONUSES -->
+<section class="bonus-section">
+  <h2 class="section-title" style="margin-top:0">Conclua Sua Compra Agora E Ganhe Automaticamente 6 Super Bonus</h2>
+  <div class="bonus-grid">
+    <div class="bonus-card">
+      <img src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/CAPAS%20DOS%20BON%C3%9AS/CAPA%20PLAYLISTS%20SENSUAIS.png" alt="Bonus 1">
+      <div class="bonus-badge">Bonus 1</div>
+      <p>Acesso exclusivo as Playlists para terapias tantra.</p>
+    </div>
+    <div class="bonus-card">
+      <img src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/CAPAS%20DOS%20BON%C3%9AS/CAPA%20O%20SEGREDO%20DO%20LIBIDO.png" alt="Bonus 2">
+      <div class="bonus-badge">Bonus 2</div>
+      <p>Protocolo de alimentos para aumento de libido e desejo.</p>
+    </div>
+    <div class="bonus-card">
+      <img src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/IMAGENS%20LP%20SEGREDO%20DO%20TANTRA/Pontos%20Er%C3%B3genos.png" alt="Bonus 3">
+      <div class="bonus-badge">Bonus 3</div>
+      <p>Ebook completo com mais de 500 posicoes sexuais detalhadas (baseado no Kama Sutra).</p>
+    </div>
+    <div class="bonus-card">
+      <img src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/CAPAS%20DOS%20BON%C3%9AS/CAPA%20DESAFIOS%20SEXUAIS.png" alt="Bonus 4">
+      <div class="bonus-badge">Bonus 4</div>
+      <p>Ebook com desafios sexuais para se divertir na hora H com seu parceiro(a).</p>
+    </div>
+    <div class="bonus-card">
+      <img src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/CAPAS%20DOS%20BON%C3%9AS/CAPA%20TRIOLOGIA%2050%20TONS%20DE%20CINZA.png" alt="Bonus 5">
+      <div class="bonus-badge">Bonus 5</div>
+      <p>Trilogia Completa de 50 tons de cinza em formato digital.</p>
+    </div>
+    <div class="bonus-card">
+      <img src="https://www.segredo-tantrico.shop/imgsnew/msg%20tantra%20imgs/CAPAS%20DOS%20BON%C3%9AS/CERTIFICADO%20SEGREDO%20TANTRICO.png" alt="Bonus 6">
+      <div class="bonus-badge">Bonus 6</div>
+      <p>Certificado valido como premiacao para profissionais de massagem tantrica orgastica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency-section">
+  <h2><span>ATENCAO:</span> ESSA PROMOCAO NAO FICARA DISPONIVEL AMANHA.</h2>
+  <p>SE VOCE SAIR DESSA PAGINA AGORA, VOCE NAO ENCONTRARA ESSA PROMOCAO NOVAMENTE</p>
+  <p class="urgency-tagline">A escolha e sua. O momento e AGORA.</p>
+  <a href="#planos" class="btn-cta">GARANTIR MINHA VAGA!</a>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="planos">
+  <div class="attention-box">ATENCAO</div>
+  <p class="pricing-subtitle">TEMOS 2 PLANOS DISPONIVEIS, ESCOLHA O SEU ANTES QUE ACABE!</p>
+  <div class="plans-grid">
+    <!-- PLANO BASICO -->
+    <div class="plan-card basic">
+      <div class="plan-name">PLANO BASICO</div>
+      <div class="plan-sub">10 Aulas Basicas Introdutorias</div>
+      <ul class="plan-features">
+        <li>Mapa Erogeno</li>
+        <li>Aulas Massagem Tantrica</li>
+        <li>Aulas Massagem Orgastica</li>
+        <li style="text-decoration: line-through; opacity: 0.5;">SEM CERTIFICADO</li>
+      </ul>
+      <div style="margin-top: auto;"></div>
+      <div class="plan-price"><small>R$</small>19,90</div>
+      <div class="plan-period">PAGAMENTO UNICO</div>
+      <a href="surpresa.html" class="btn-plan basic">QUERO O PLANO BASICO</a>
+      <div class="plan-undertext">ESPERE: Temos uma oferta Mais Vantajosa para voce<br>Logo Abaixo</div>
+    </div>
+
+    <!-- PLANO PREMIUM -->
+    <div class="plan-card premium">
+      <div class="plan-popular-badge">MAIS VENDIDO</div>
+      <div class="plan-name">PLANO PREMIUM</div>
+      <ul class="plan-features">
+        <li>+130 Video Aulas Com Modelos Reais</li>
+        <li>Teoricas Avancadas</li>
+        <li>Massagem Relaxante, Erotica, Japonesa</li>
+        <li>Massagem Tantrica, Lingam, Yoni</li>
+        <li>Massagem Sensitiva e Orgastica</li>
+        <li>Tecnicas de Posicoes</li>
+        <li>Pontos de Prazer & Sexo Oral</li>
+        <li>Esguicho Feminino</li>
+        <li>Pompoarismo Feminino e Masculino</li>
+        <li>Posicoes Sexuais + Desafios na Hora H</li>
+        <li>Trilogia 50 Tons de Cinza</li>
+        <li>Musicas Ambiente para Sexo</li>
+        <li>✦ Acesso Vitalicio</li>
+        <li>✦ Certificado Incluso</li>
+        <li>✦ Suporte Exclusivo</li>
+        <li>✦ Bonus Exclusivos</li>
+        <li>✦ 7 Dias de Garantia</li>
+      </ul>
+
+      <!-- PREÇO -->
+      <div style="text-align:center; margin-bottom: 6px;">
+        <span style="color:#555; text-decoration:line-through; font-size:16px; font-family:Arial,sans-serif;">
+          de R$397,90 Por Apenas
+        </span>
+      </div>
+      <div style="text-align:center; margin-bottom: 4px;">
+        <span style="color:#e8c94b; font-size:58px; font-weight:900; font-family:Arial,sans-serif; line-height:1; text-shadow: 0 0 20px rgba(232,201,75,0.4);">
+          R$57,90
+        </span>
+      </div>
+      <div style="text-align:center; margin-bottom:24px; color:#888; font-size:13px; font-family:Arial,sans-serif; letter-spacing:1px;">
+        PAGAMENTO UNICO · 90% OFF
+      </div>
+
+      <!-- BOTÃO -->
+      <a href="https://pay.wiapy.com/4WeUsfClFY" style="
+        display: block;
+        background: linear-gradient(135deg, #e8c94b, #c8a800);
+        color: #000;
+        font-size: 17px;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 18px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        text-align: center;
+        box-shadow: 0 4px 24px rgba(232,201,75,0.45), 0 0 40px rgba(232,201,75,0.15);
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-bottom: 18px;
+      "
+      onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 32px rgba(232,201,75,0.6)'"
+      onmouseout="this.style.transform='';this.style.boxShadow='0 4px 24px rgba(232,201,75,0.45)'">
+        QUERO O PLANO PREMIUM
+      </a>
+
+      <!-- ÍCONES DE PAGAMENTO -->
+      <div style="text-align:center; margin-bottom: 16px;">
+        <img 
+          src="https://www.segredo-tantrico.shop/wp-content/uploads/2025/07/PAGAMENTO-2-1024x87-1-3.webp"
+          alt="Formas de pagamento"
+          style="max-width: 280px; width: 100%; opacity: 0.75; filter: brightness(0.9);"
+        >
+      </div>
+
+      <!-- AVISO -->
+      <div style="
+        text-align: center;
+        color: #e8c94b;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        line-height: 1.5;
+      ">
+        APROVEITE AGORA: Voce NAO vai encontrar essa oferta depois.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <h2 class="section-title">Perguntas Frequentes</h2>
+  <div class="faq-item">
+    <button class="faq-question">O curso serve tanto para homens quanto para mulheres?</button>
+    <div class="faq-answer">
+      Sim! Ensinamos as técnicas que podem e devem ser aplicadas em ambos. Você terá demonstrações práticas para o corpo feminino e masculino.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Eu preciso ter experiência em massagem?</button>
+    <div class="faq-answer">
+      De forma alguma. O método foi desenhado do absoluto zero, partindo do toque sutil até as técnicas mais avançadas.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Como acesso o curso?</button>
+    <div class="faq-answer">
+      Após a confirmação da compra, você receberá automaticamente no seu e-mail e WhatsApp os dados de acesso imediatos para nossa Área de Membros. Você poderá assistir pelo celular, computador ou tablet.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">E se eu não gostar, tem garantia?</button>
+    <div class="faq-answer">
+      Sim, você está coberto pela nossa garantia incondicional de 7 dias. Basta mandar um e-mail que devolveremos cada centavo que você pagou.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Segredo Tântrico © 2024. Todos os direitos reservados.</p>
+  <p style="margin-top: 10px;">
+    <a href="#">Termos de Uso</a> &bull; <a href="#">Política de Privacidade</a>
+  </p>
+</footer>
+
+<!-- SOCIAL PROOF NOTIF DYNAMICALLY GENERATED IN JS -->
+
+<script>
+  // FAQ Accordion Functionality
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+      // close others
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+           otherItem.classList.remove('active');
+           otherItem.querySelector('.faq-answer').style.maxHeight = 0;
+        }
+      });
+      // toggle current
+      item.classList.toggle('active');
+      const answer = item.querySelector('.faq-answer');
+      if (item.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = 0;
+      }
+    });
+  });
+
+  // Countdown timer logic
+  let totalSeconds = 13 * 3600; 
+  const countdownEl = document.getElementById('countdown');
+  setInterval(() => {
+    if (totalSeconds <= 0) return;
+    totalSeconds--;
+    let h = Math.floor(totalSeconds / 3600);
+    let m = Math.floor((totalSeconds % 3600) / 60);
+    let s = totalSeconds % 60;
+    countdownEl.innerText = 
+      String(h).padStart(2, '0') + ':' + 
+      String(m).padStart(2, '0') + ':' + 
+      String(s).padStart(2, '0');
+      
+    // Animação Tick
+    countdownEl.classList.remove('tick-anim');
+    void countdownEl.offsetWidth; // reflow
+    countdownEl.classList.add('tick-anim');
+  }, 1000);
+
+  // DYNAMIC SOCIAL PROOF NOTIFICATION LOGIC
+  const notifConfig = {
+    timeout: 4500,
+    minDelay: 5,
+    maxDelay: 18,
+    plans: ['Plano Basico', 'Plano Premium'],
+    names: {
+      m: ['Lucas', 'Pedro', 'Gabriel', 'Mateus', 'Rafael', 'Felipe', 'Daniel', 'Miguel', 'Eduardo', 'Guilherme', 'Samuel', 'Maycon'],
+      f: ['Maria', 'Ana', 'Juliana', 'Fernanda', 'Patricia', 'Camila', 'Amanda', 'Bruna', 'Jessica', 'Leticia', 'Alice', 'Taynara', 'Beatriz']
+    }
+  };
+
+  function showNotif() {
+    const gender = Math.random() < 0.5 ? 'm' : 'f';
+    const names = notifConfig.names[gender];
+    const name = names[Math.floor(Math.random() * names.length)];
+    const plan = notifConfig.plans[Math.floor(Math.random() * notifConfig.plans.length)];
+
+    const el = document.createElement('div');
+    el.className = 'notif';
+    el.innerHTML = `
+      <div class="notif-text">
+        <span class="notif-name">${name}</span>
+        <span class="notif-action">adquiriu o</span>
+        <span class="notif-plan">${plan}</span>
+      </div>
+    `;
+
+    document.body.appendChild(el);
+
+    // Entrada suave
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => el.classList.add('show'));
+    });
+
+    // Saída suave
+    setTimeout(() => {
+      el.classList.remove('show');
+      setTimeout(() => el.remove(), 500);
+    }, notifConfig.timeout);
+
+    // Próxima notificação
+    const next = (Math.random() * (notifConfig.maxDelay - notifConfig.minDelay) + notifConfig.minDelay) * 1000;
+    setTimeout(showNotif, next);
+  }
+
+  // Primeira notificação após 4s
+  setTimeout(showNotif, 4000);
+
+  // Rolagem Lenta e Cinematografica
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      e.preventDefault();
+      
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      let start = null;
+      const duration = 1500; // 1.5 segundos
+
+      function easeInOutQuart(t, b, c, d) {
+        t /= d/2;
+        if (t < 1) return c/2 * t * t * t * t + b;
+        t -= 2;
+        return -c/2 * (t * t * t * t - 2) + b;
+      }
+
+      function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const run = easeInOutQuart(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+      requestAnimationFrame(animation);
+    });
+  });
+
+  // 1. PAGE TRANSITIONS
+  const tOverlay = document.createElement('div');
+  tOverlay.className = 'page-transition-overlay';
+  document.body.appendChild(tOverlay);
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      // If it's a valid internal page link (not an anchor, not an external checkout)
+      if (href && !href.startsWith('#') && !href.startsWith('http')) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => { window.location.href = href; }, 400);
+      }
+    });
+  });
+
+  // 2. SCROLL REVEAL OBSERVER
+  const revealElements = document.querySelectorAll('h1, h2, h3, p, .technique-card, .bonus-card, .plan-card, .bullet-item, .content-list-item, .benefits-list li, .testimonial-img');
+  revealElements.forEach(el => el.classList.add('reveal'));
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  revealElements.forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segredo Tantrico</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #070707;
+    background-image: radial-gradient(circle at 50% 20%, rgba(192, 57, 43, 0.20) 0%, transparent 80%);
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* COUNTDOWN BAR */
+  .countdown-bar {
+    background: #8b0000;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+  }
+  .countdown-bar span { color: #ffd700; font-weight: bold; }
+
+  /* MAIN CONTENT */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px 40px;
+  }
+
+  /* LOGO TITLE */
+  .logo-title {
+    font-size: clamp(36px, 6vw, 64px);
+    font-style: italic;
+    color: #c0392b;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .subtitle-main {
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 12px;
+    font-family: Arial, sans-serif;
+  }
+  .subtitle-main span { color: #e8c94b; }
+
+  .description {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 50px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* QUESTION */
+  .question {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* GENDER CARDS */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 680px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .gender-card {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 36px 24px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .gender-card:hover {
+    border-color: #c0392b;
+    background: #1a1010;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(192,57,43,0.25);
+  }
+
+  .gender-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+  }
+  .gender-icon.male   { background: #c0392b; }
+  .gender-icon.female { background: #c8a800; }
+
+  .gender-name {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .gender-card.male-card   .gender-name { color: #c0392b; }
+  .gender-card.female-card .gender-name { color: #e8c94b; }
+
+  .gender-desc {
+    color: #bbb;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+  }
+
+  /* BADGES */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .badge-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #ccc;
+  }
+  .badge-check {
+    background: #c0392b;
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #111;
+  }
+
+  /* OVERLAY TRANSIÇÃO ANTIGO REMOVIDO PARA DAR LUGAR AO NOVO GLOBAL */
+
+  @media (max-width: 480px) {
+    .cards-grid { grid-template-columns: 1fr; max-width: 320px; }
+    .badges { flex-direction: column; align-items: center; }
+  }
+
+  /* GLOBAL FLUIDITY & ANIMATIONS */
+  html { scroll-behavior: smooth; }
+  body { opacity: 0; animation: fadeInBody 0.5s ease forwards; }
+  @keyframes fadeInBody { to { opacity: 1; } }
+
+  /* PAGE TRANSITION OVERLAY */
+  .page-transition-overlay {
+    position: fixed; inset: 0; background: #050505; z-index: 99999;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+  }
+  body.fade-out .page-transition-overlay { opacity: 1; pointer-events: auto; }
+
+  /* SCROLL REVEAL STARTING STATE */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  /* BUTTON MICRO-INTERACTIONS & PULSE */
+  .btn-cta, .btn-upgrade, .btn-plan, .gender-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  }
+  .btn-cta:hover, .btn-upgrade:hover, .btn-plan:hover {
+    transform: scale(1.03) !important;
+  }
+  @keyframes pulseSubtle {
+    0% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(192, 57, 43, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0); }
+  }
+  .btn-cta, .btn-upgrade, .btn-plan.premium { animation: pulseSubtle 2.5s infinite; }
+
+  /* CARDS HOVER */
+  .technique-card, .bonus-card, .plan-card {
+    transition: transform 0.3s ease, border-color 0.3s ease !important;
+  }
+  .technique-card:hover, .bonus-card:hover, .plan-card:hover, .gender-card:hover {
+    transform: translateY(-6px) !important;
+    border-color: #c0392b !important;
+  }
+
+  /* COUNTDOWN TICK */
+  #countdown { display: inline-block; }
+  @keyframes tickPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .tick-anim { animation: tickPop 0.15s ease-out; }
+</style>
+</head>
+<body>
+
+<!-- OVERLAY TRANSIÇÃO -->
+<div class="overlay" id="overlay"></div>
+
+<!-- COUNTDOWN -->
+<div class="countdown-bar">
+  OFERTA EXPIRA HOJE! FALTAM <span id="countdown">23:59:35</span>
+</div>
+
+<!-- CONTEUDO PRINCIPAL -->
+<main class="main">
+
+  <div class="logo-title">Segredo Tantrico</div>
+
+  <div class="subtitle-main">
+    Tecnicas de <span>Massagem Tantrica Orgastica</span>
+  </div>
+
+  <p class="description">
+    Aprenda a despertar o prazer profundo com tecnicas exclusivas e
+    demonstracoes reais em video.
+  </p>
+
+  <div class="question">Voce e homem ou mulher?</div>
+
+  <div class="cards-grid">
+    <!-- HOMEM -->
+    <a class="gender-card male-card" href="oferta.html?genero=homem">
+      <div class="gender-icon male">♂</div>
+      <div class="gender-name">HOMEM</div>
+      <div class="gender-desc">Quero dominar o prazer feminino</div>
+    </a>
+
+    <!-- MULHER -->
+    <a class="gender-card female-card" href="oferta.html?genero=mulher">
+      <div class="gender-icon female">♀</div>
+      <div class="gender-name">MULHER</div>
+      <div class="gender-desc">Quero despertar o prazer masculino</div>
+    </a>
+  </div>
+
+  <!-- BADGES -->
+  <div class="badges">
+    <div class="badge-item">
+      <div class="badge-check">✓</div>
+      <span>+15.000 Alunos Satisfeitos</span>
+    </div>
+    <div class="badge-item">
+      <div class="badge-check">✓</div>
+      <span>Acesso Imediato</span>
+    </div>
+    <div class="badge-item">
+      <div class="badge-check">✓</div>
+      <span>Garantia de 7 Dias</span>
+    </div>
+  </div>
+
+</main>
+
+<footer>© 2025 Segredo Tantrico – Todos os direitos reservados</footer>
+
+<script>
+  // COUNTDOWN
+  function updateCountdown() {
+    const now = new Date();
+    const end = new Date();
+    end.setHours(23, 59, 59, 999);
+    const diff = end - now;
+    if (diff < 0) return;
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('countdown').textContent =
+      `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+      
+    // Animação Tick
+    const cd = document.getElementById('countdown');
+    if(cd) {
+      cd.classList.remove('tick-anim');
+      void cd.offsetWidth;
+      cd.classList.add('tick-anim');
+    }
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // 1. LOADING & PAGE TRANSITIONS
+  const tOverlay = document.createElement('div');
+  tOverlay.className = 'page-transition-overlay';
+  document.body.appendChild(tOverlay);
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('http')) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => { window.location.href = href; }, 400);
+      }
+    });
+  });
+
+  // 2. SCROLL REVEAL OBSERVER
+  const revealElements = document.querySelectorAll('h1, h2, h3, p, .technique-card, .bonus-card, .plan-card, .bullet-item, .content-list-item, .benefits-list li, .gender-card, .badge-item');
+  revealElements.forEach(el => el.classList.add('reveal'));
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  revealElements.forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>

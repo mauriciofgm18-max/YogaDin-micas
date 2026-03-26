@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surpresa Especial - Segredo Tantrico</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    background-color: #070707; 
+    background-image: radial-gradient(circle at 50% 10%, rgba(192, 57, 43, 0.20) 0%, transparent 60%);
+    background-attachment: fixed;
+    color: #fff; 
+    font-family: 'Georgia', serif; 
+  }
+
+  /* COUNTDOWN */
+  .countdown-bar {
+    background: #8b0000;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .countdown-bar span { color: #ffd700; font-weight: bold; }
+
+  /* CONTAINER */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+    text-align: center;
+  }
+
+  /* TITULO */
+  .page-title {
+    font-family: 'Georgia', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  .page-subtitle {
+    color: #888;
+    font-size: 17px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 40px;
+  }
+
+  /* CAIXA DE DESTAQUE */
+  .highlight-box {
+    background: rgba(192, 57, 43, 0.08); /* Faint red glow */
+    border: 1px solid rgba(192, 57, 43, 0.3); /* Soft red border */
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #f0f0f0;
+    text-align: center;
+  }
+  .highlight-box strong { color: #fff; font-weight: bold; font-family: 'Arial', sans-serif; }
+  .highlight-box .price-red { color: #ef4444; font-weight: 900; }
+
+  /* DIVISOR */
+  .divider-line {
+    width: 60px;
+    height: 2px;
+    background: #d93850;
+    border-radius: 2px;
+    margin: 0 auto 50px;
+  }
+
+  /* LISTA DE BENEFICIOS */
+  .benefits-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 50px;
+    padding: 0 10px;
+  }
+  .benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #f8f8f8;
+  }
+  .benefits-list li:last-child { border-bottom: none; }
+  .check-circle {
+    background: transparent;
+    border: 1.5px solid #d93850;
+    border-radius: 50%;
+    width: 24px; height: 24px;
+    min-width: 24px;
+    display: flex; align-items: center; justify-content: center;
+    color: #d93850;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  /* COMPARATIVO DE PLANOS */
+  .plans-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  .plan-box {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .plan-box.highlight {
+    border-color: #c0392b;
+    box-shadow: 0 0 24px rgba(192,57,43,0.25);
+  }
+  .plan-box-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+    color: #888;
+  }
+  .plan-box.highlight .plan-box-label { color: #c0392b; }
+  .plan-box-price {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  .plan-box.highlight .plan-box-price { color: #c0392b; }
+  .plan-box-period {
+    font-size: 12px;
+    color: #666;
+    font-family: Arial, sans-serif;
+    margin-bottom: 6px;
+  }
+  .plan-box-desc {
+    font-size: 13px;
+    color: #888;
+    font-family: Arial, sans-serif;
+  }
+
+  /* CAIXA DE PERSUASÃO */
+  .persuasion-box {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
+    padding: 28px 24px;
+    margin-bottom: 36px;
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    color: #bbb;
+    font-size: 16px;
+    text-align: center;
+  }
+  .persuasion-box .price-red { color: #c0392b; font-weight: bold; }
+  .persuasion-box .italic-gold {
+    color: #e8c94b;
+    font-style: italic;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    display: block;
+    margin-top: 12px;
+  }
+
+  /* BOTÃO PRINCIPAL */
+  .btn-upgrade {
+    display: block;
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(192,57,43,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+  }
+  .btn-upgrade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(192,57,43,0.7);
+  }
+
+  /* LINK SECUNDARIO */
+  .btn-skip {
+    display: block;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 60px;
+    transition: color 0.2s;
+  }
+  .btn-skip:hover { color: #999; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #333;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #111;
+  }
+  footer a { color: #444; text-decoration: none; }
+  footer a:hover { color: #c0392b; }
+
+  @media (max-width: 480px) {
+    .plans-compare { grid-template-columns: 1fr; }
+  }
+
+  /* GLOBAL FLUIDITY & ANIMATIONS */
+  html { scroll-behavior: smooth; }
+  body { opacity: 0; animation: fadeInBody 0.5s ease forwards; }
+  @keyframes fadeInBody { to { opacity: 1; } }
+
+  /* PAGE TRANSITION OVERLAY */
+  .page-transition-overlay {
+    position: fixed; inset: 0; background: #050505; z-index: 99999;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+  }
+  body.fade-out .page-transition-overlay { opacity: 1; pointer-events: auto; }
+
+  /* SCROLL REVEAL STARTING STATE */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  /* BUTTON MICRO-INTERACTIONS & PULSE */
+  .btn-cta, .btn-upgrade, .btn-plan, .gender-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  }
+  .btn-cta:hover, .btn-upgrade:hover, .btn-plan:hover {
+    transform: scale(1.03) !important;
+  }
+  @keyframes pulseSubtle {
+    0% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(192, 57, 43, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0); }
+  }
+  .btn-cta, .btn-upgrade, .btn-plan.premium { animation: pulseSubtle 2.5s infinite; }
+
+  /* CARDS HOVER */
+  .technique-card, .bonus-card, .plan-card, .highlight-box, .plan-box, .persuasion-box {
+    transition: transform 0.3s ease, border-color 0.3s ease !important;
+  }
+  .technique-card:hover, .bonus-card:hover, .plan-card:hover, .gender-card:hover, .highlight-box:hover, .plan-box:hover {
+    transform: translateY(-6px) !important;
+    border-color: #c0392b !important;
+  }
+
+  /* COUNTDOWN TICK */
+  #countdown { display: inline-block; }
+  @keyframes tickPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .tick-anim { animation: tickPop 0.15s ease-out; }
+</style>
+</head>
+<body>
+
+<!-- COUNTDOWN -->
+<div class="countdown-bar">
+  OFERTA EXPIRA HOJE! FALTAM <span id="countdown">12:00:00</span>
+</div>
+
+<div class="container">
+
+  <!-- TITULO -->
+  <h1 class="page-title">Surpresa Especial para Voce!</h1>
+  <p class="page-subtitle">Voce ia levar so o basico.... mas olha o que a gente preparou:</p>
+
+  <!-- CAIXA DESTAQUE -->
+  <div class="highlight-box">
+    Liberamos apenas <strong>AGORA</strong> para VOCE uma versao melhorada do plano basico
+    com mais conteudo — <span class="price-red">por apenas R$29,90!</span>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- LISTA DE BENEFICIOS -->
+  <ul class="benefits-list">
+    <li><div class="check-circle">✓</div> 30 Video Aulas</li>
+    <li><div class="check-circle">✓</div> Mapa Erogeno</li>
+    <li><div class="check-circle">✓</div> Aulas de Massagem Tantrica</li>
+    <li><div class="check-circle">✓</div> Aulas de Massagem Orgastica</li>
+    <li><div class="check-circle">✓</div> + Tecnicas Eroticas de Toque Sensitivo</li>
+    <li><div class="check-circle">✓</div> + Aulas de Massagem Lingam e Yoni (versao introdutoria)</li>
+    <li><div class="check-circle">✓</div> + Tecnicas de Pompoarismo Basico Feminino</li>
+    <li><div class="check-circle">✓</div> + Dicas de Preliminares e Posicoes de Dominio</li>
+    <li><div class="check-circle">✓</div> + Musicas Sensuais para Ambientacao</li>
+  </ul>
+
+  <!-- COMPARATIVO -->
+  <div class="plans-compare">
+    <div class="plan-box">
+      <div class="plan-box-label">PLANO BASICO</div>
+      <div class="plan-box-price">R$19,90</div>
+      <div class="plan-box-period">Pagamento unico</div>
+      <div class="plan-box-desc">10 aulas</div>
+    </div>
+    <div class="plan-box highlight">
+      <div class="plan-box-label">PLANO UPGRADE</div>
+      <div class="plan-box-price">R$29,90</div>
+      <div class="plan-box-period">Pagamento unico</div>
+      <div class="plan-box-desc">30 aulas + bonus</div>
+    </div>
+  </div>
+
+  <!-- PERSUASÃO -->
+  <div class="persuasion-box">
+    Voce pode ate levar o plano basico por <span class="price-red">R$19,90...</span>
+    <br><br>
+    Mas se ja decidiu dar esse passo, vale a pena garantir o upgrade e
+    comecar com mais profundidade, mais prazer, mais tecnica.
+    <span class="italic-gold">A diferenca e pequena no preco — mas gigante no resultado.</span>
+  </div>
+
+  <!-- BOTÃO UPGRADE -->
+  <a href="https://pay.wiapy.com/dlsJoYQt8Q" class="btn-upgrade">
+    SIM! QUERO O PLANO UPGRADE POR R$29,90
+  </a>
+
+  <!-- LINK BASICO -->
+  <a href="https://pay.wiapy.com/kVtIyVV6Si" class="btn-skip">
+    CLIQUE AQUI: Se quiser continuar para o Plano Basico de R$19,90
+  </a>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#">Politica de Privacidade</a> | <a href="#">Termos de Uso</a><br><br>
+  Segredo Tantrico — Todos os direitos reservados
+</footer>
+
+<script>
+  function updateCountdown() {
+    const now = new Date();
+    const end = new Date();
+    end.setHours(23, 59, 59, 999);
+    const diff = end - now;
+    if (diff < 0) return;
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('countdown').textContent =
+      `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+      
+    // Animação Tick
+    const cd = document.getElementById('countdown');
+    if(cd) {
+      cd.classList.remove('tick-anim');
+      void cd.offsetWidth;
+      cd.classList.add('tick-anim');
+    }
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // 1. PAGE TRANSITIONS
+  const tOverlay = document.createElement('div');
+  tOverlay.className = 'page-transition-overlay';
+  document.body.appendChild(tOverlay);
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      // If valid internal page link
+      if (href && !href.startsWith('#') && !href.startsWith('http')) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => { window.location.href = href; }, 400);
+      }
+    });
+  });
+
+  // 2. SCROLL REVEAL OBSERVER
+  const revealElements = document.querySelectorAll('h1, h2, h3, p, .highlight-box, .plan-box, .persuasion-box, .benefits-list li');
+  revealElements.forEach(el => el.classList.add('reveal'));
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  revealElements.forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
